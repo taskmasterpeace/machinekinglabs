@@ -1,0 +1,401 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
+---
+
+<Layout title="Robert L. Smith III | Machine King Labs" description="Founder & CEO of Machine King Labs - AI-native innovator bringing cinematic storytelling to product development.">
+  <!-- Hero with 21x9 Looping Video Background -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+    >
+      <source src="/videos/team/robert video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Overlay Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-32 text-center">
+      <div class="mb-6 flex justify-center">
+        <Crown class="w-20 h-20 text-zinc-400" />
+      </div>
+      <h1 class="hero-title text-6xl md:text-8xl font-bold mb-6">
+        <span class="gradient-text">Robert L. Smith III</span>
+      </h1>
+      <p class="text-3xl text-white font-semibold mb-3">Founder & CEO</p>
+      <p class="text-xl text-zinc-400 mb-6">GenAI Architect | 15+ Years AI/ML Engineering</p>
+      <p class="text-lg text-zinc-500 mb-4">Former Deloitte Senior Solutions Delivery Manager</p>
+      <p class="text-2xl text-white italic max-w-3xl mx-auto leading-relaxed mb-10">
+        "With AI anything is possible"
+      </p>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:robert@machinekinglabs.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          <Mail class="w-4 h-4" />
+          Email
+        </a>
+        <a href="https://calendly.com/robert-machinekinglabs" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Schedule Meeting
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biography Section -->
+  <section class="py-20 bg-zinc-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="bio-section text-4xl md:text-5xl font-bold mb-8">
+        <span class="gradient-text">About</span>
+      </h2>
+      <div class="space-y-6">
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          GenAI Architect and AI Product Leader with 15+ years engineering production AI systems—from RAG pipelines
+          and multi-agent orchestration to real-time inference and LLM evaluation. Expert in vector databases,
+          knowledge graphs, prompt engineering, and AI governance frameworks (SOC2/ISO27001). Proven track record
+          building AI platforms at Fortune 500 scale, optimizing GPU and cost efficiency, and delivering measurable
+          business impact across healthcare, consulting, and high-growth startups.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          As Deloitte Senior Solutions Delivery Manager (2018-2025), led 8-person international team delivering
+          Splunk observability and SIEM solutions for Fortune 500 healthcare and financial services clients,
+          managing 500+ security use cases and reducing MTTD by 40%. Presented GenAI integration strategies at
+          Deloitte Impact Day 2023, demonstrating AI-enhanced workflows for 200+ consulting professionals.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          Founded Machine King Labs (2025) to build conversational intelligence and AI-powered SaaS platforms.
+          Filed provisional patent for real-time meeting enhancement technology. Deep security and observability
+          background ensures safe, auditable AI deployments. Microsoft Azure AI, AWS, CompTIA Security+, and
+          Splunk certified.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          Unique combination of technical AI/ML engineering expertise with production/storytelling skills from
+          8+ years directing award-winning media projects. This cross-disciplinary approach enables exceptional
+          product vision—building AI systems that are both technically sophisticated and genuinely useful for end users.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="achievements-section text-4xl md:text-5xl font-bold mb-12 text-center">
+        <span class="gradient-text">Key Achievements</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">15+ Years AI/ML Engineering</h3>
+          <p class="text-zinc-400 mb-4">
+            Production AI systems from RAG pipelines to multi-agent orchestration, real-time inference, vector databases, and LLM evaluation at Fortune 500 scale
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">15+ Years</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Enterprise Scale</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Deloitte Senior Delivery Manager</h3>
+          <p class="text-zinc-400 mb-4">
+            Led 8-person international team (USA, Spain, India) for Fortune 500 healthcare/financial clients. 500+ security use cases, reduced MTTD by 40%
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs rounded-sm">2018-2025</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Fortune 500</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Filed Provisional Patent</h3>
+          <p class="text-zinc-400 mb-4">
+            Meeting intelligence system with 8-officer AI coordination for strategic insights and real-time analysis
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs rounded-sm">Patent Pending</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">31K+ YouTube Community</h3>
+          <p class="text-zinc-400 mb-4">
+            Built Algorithm Institute channel to 31,000+ subscribers focused on AI education and tutorials
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span class="px-3 py-1 bg-red-500/10 border border-red-500/20 text-red-400 text-xs rounded-sm">31K+ Subs</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">The Presidium System</h3>
+          <p class="text-zinc-400 mb-4">
+            Developed 8-officer AI coordination system powering internal operations and partner platforms
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs rounded-sm">Production</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Enterprise Certifications</h3>
+          <p class="text-zinc-400 mb-4">
+            Microsoft Azure AI Fundamentals, AWS Certified Cloud Practitioner, CompTIA Security+, Splunk Certified Power User—demonstrating cross-platform AI and security expertise
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm flex-wrap">
+            <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs rounded-sm">Azure AI</span>
+            <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs rounded-sm">AWS</span>
+            <span class="px-3 py-1 bg-red-500/10 border border-red-500/20 text-red-400 text-xs rounded-sm">Security+</span>
+            <span class="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 text-xs rounded-sm">Splunk</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Global Team Leadership</h3>
+          <p class="text-zinc-400 mb-4">
+            Led international teams across USA, Spain, and India delivering enterprise AI and security solutions for Fortune 500 clients
+          </p>
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">8-Person Team</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">3 Countries</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Led Section -->
+  <section class="py-20 bg-zinc-950 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="projects-section text-4xl md:text-5xl font-bold mb-12 text-center">
+        <span class="gradient-text">Projects Led</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
+          <div class="aspect-video bg-zinc-950 flex items-center justify-center p-12">
+            <img src="/images/hey-youre-hired-logo.png" alt="Hey You're Hired" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-2xl font-bold text-white">Hey You're Hired</h3>
+              <span class="px-2 py-1 bg-green-500/10 border border-green-500/20 text-green-400 text-xs uppercase tracking-wider rounded-sm">Live</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm">AI-powered career intelligence platform with 30 Fortune 500 applications in pipeline</p>
+            <a href="https://heyyourehired.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-white hover:text-zinc-300 font-semibold text-sm">
+              Visit Site
+              <ExternalLink class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
+          <div class="aspect-video bg-zinc-950 flex items-center justify-center p-12">
+            <img src="/images/presidium-logo.png" alt="The Presidium" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-2xl font-bold text-white">The Presidium</h3>
+              <span class="px-2 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs uppercase tracking-wider rounded-sm">Production</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm">8-officer AI coordination system for strategic intelligence and operational insights</p>
+          </div>
+        </div>
+
+        <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
+          <div class="aspect-video bg-zinc-950 flex items-center justify-center p-12">
+            <img src="/images/algorithm-institute-logo.png" alt="Algorithm Institute" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-2xl font-bold text-white">Algorithm Institute</h3>
+              <span class="px-2 py-1 bg-red-500/10 border border-red-500/20 text-red-400 text-xs uppercase tracking-wider rounded-sm">31K+ Subs</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm">AI education YouTube channel with 31,000+ subscribers and growing community</p>
+            <a href="https://www.youtube.com/@AlgorithmInstituteofBR" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-white hover:text-zinc-300 font-semibold text-sm">
+              Visit Channel
+              <ExternalLink class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-950 flex items-center justify-center">
+            <Crown class="w-24 h-24 text-zinc-600" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-2xl font-bold text-white">TalkAdvantage Pro</h3>
+              <span class="px-2 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs uppercase tracking-wider rounded-sm">Patent Pending</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm">Meeting intelligence platform with AI-powered insights and real-time analysis</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="expertise-section text-4xl md:text-5xl font-bold mb-12 text-center">
+        <span class="gradient-text">Expertise</span>
+      </h2>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <span class="px-4 py-2 bg-zinc-950 border border-zinc-800 text-zinc-300 rounded-sm font-medium">AI Product Strategy</span>
+        <span class="px-4 py-2 bg-zinc-950 border border-zinc-800 text-zinc-300 rounded-sm font-medium">Storytelling & Narrative Design</span>
+        <span class="px-4 py-2 bg-zinc-950 border border-zinc-800 text-zinc-300 rounded-sm font-medium">Multi-Project Management</span>
+        <span class="px-4 py-2 bg-zinc-950 border border-zinc-800 text-zinc-300 rounded-sm font-medium">Filmmaking & Visual Innovation</span>
+        <span class="px-4 py-2 bg-zinc-950 border border-zinc-800 text-zinc-300 rounded-sm font-medium">Strategic Coordination</span>
+        <span class="px-4 py-2 bg-zinc-950 border border-zinc-800 text-zinc-300 rounded-sm font-medium">Remote Team Leadership</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-black border-t border-zinc-800">
+    <div class="cta-section max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Get in Touch</h2>
+      <p class="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto">
+        Interested in discussing investment opportunities, partnerships, or collaboration?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:robert@machinekinglabs.com" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          <Mail class="w-5 h-5" />
+          Email Robert
+        </a>
+        <a href="https://calendly.com/robert-machinekinglabs" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Schedule Meeting
+        </a>
+        <a href="/team" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Back to Team
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero title animation
+  gsap.from('.hero-title', {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    delay: 0.3,
+    ease: 'power3.out'
+  });
+
+  // Biography section
+  gsap.from('.bio-section', {
+    scrollTrigger: {
+      trigger: '.bio-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -40,
+    duration: 0.8
+  });
+
+  // Achievements section
+  gsap.from('.achievements-section', {
+    scrollTrigger: {
+      trigger: '.achievements-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+
+  // Achievement cards stagger
+  gsap.from('.achievement-card', {
+    scrollTrigger: {
+      trigger: '.achievement-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Projects section
+  gsap.from('.projects-section', {
+    scrollTrigger: {
+      trigger: '.projects-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+
+  // Project cards stagger
+  gsap.from('.project-card', {
+    scrollTrigger: {
+      trigger: '.project-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Expertise section
+  gsap.from('.expertise-section', {
+    scrollTrigger: {
+      trigger: '.expertise-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    scale: 0.95,
+    duration: 0.8
+  });
+
+  // CTA section
+  gsap.from('.cta-section', {
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+</script>
+
+<style>
+  .achievement-card,
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .achievement-card:hover,
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+</style>

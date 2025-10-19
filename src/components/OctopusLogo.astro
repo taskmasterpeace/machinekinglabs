@@ -1,0 +1,284 @@
+---
+// Interactive Octopus Logo with Eye Tracking
+interface Props {
+  prototype?: 'subtle' | 'dramatic' | '3d' | '3d-realistic' | '3d-sleek' | '3d-subtle';
+}
+
+const { prototype = 'subtle' } = Astro.props;
+const uniqueId = `octopus-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="relative inline-block">
+  <canvas id={uniqueId} class="w-64 h-64" data-prototype={prototype}></canvas>
+</div>
+
+<script>
+  // Initialize all octopus canvases on the page
+  document.addEventListener('DOMContentLoaded', () => {
+    const canvases = document.querySelectorAll('canvas[data-prototype]');
+    canvases.forEach((canvas) => initOctopus(canvas));
+  });
+
+  function initOctopus(canvas) {
+    const ctx = canvas.getContext('2d');
+    const prototype = canvas.dataset.prototype;
+
+    // Set canvas size - BIGGER for better visibility
+    const size = 256;
+    canvas.width = size;
+    canvas.height = size;
+
+    // Load the octopus image
+    const img = new Image();
+    img.src = '/images/machine-king-labs-logo.png';
+
+    // Eye positions (relative to image - adjust these for your octopus logo)
+    let leftEye, rightEye;
+
+    // 3d-realistic has eyes closer together
+    if (prototype === '3d-realistic') {
+      leftEye = { x: 0.44, y: 0.38 };   // Closer to center
+      rightEye = { x: 0.56, y: 0.38 };  // Closer to center
+    } else {
+      leftEye = { x: 0.42, y: 0.38 };   // Standard position
+      rightEye = { x: 0.58, y: 0.38 };  // Standard position
+    }
+
+    // Size settings based on prototype
+    let eyeRadius, pupilRadius;
+    if (prototype === 'dramatic') {
+      eyeRadius = 10;
+      pupilRadius = 5;
+    } else if (prototype.startsWith('3d')) {
+      eyeRadius = 8;
+      pupilRadius = 4;
+    } else {
+      eyeRadius = 7;
+      pupilRadius = 3;
+    }
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      mouseX = e.clientX - centerX;
+      mouseY = e.clientY - centerY;
+    });
+
+    function calculatePupilPosition(eyeX, eyeY) {
+      const angle = Math.atan2(mouseY - eyeY, mouseX - eyeX);
+      const distance = prototype === '3d'
+        ? Math.min(eyeRadius * 0.6, Math.hypot(mouseX - eyeX, mouseY - eyeY) / 20)
+        : eyeRadius * 0.5;
+      return {
+        x: eyeX + Math.cos(angle) * distance,
+        y: eyeY + Math.sin(angle) * distance
+      };
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, size, size);
+
+      const leftEyeX = size * leftEye.x;
+      const leftEyeY = size * leftEye.y;
+      const rightEyeX = size * rightEye.x;
+      const rightEyeY = size * rightEye.y;
+
+      const leftPupil = calculatePupilPosition(leftEyeX, leftEyeY);
+      const rightPupil = calculatePupilPosition(rightEyeX, rightEyeY);
+
+      // PROTOTYPE 1: SUBTLE
+      if (prototype === 'subtle') {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x, leftPupil.y, pupilRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x, rightPupil.y, pupilRadius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // PROTOTYPE 2: DRAMATIC
+      if (prototype === 'dramatic') {
+        // Eye whites
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Glowing pupils
+        const grad1 = ctx.createRadialGradient(leftPupil.x, leftPupil.y, 0, leftPupil.x, leftPupil.y, pupilRadius);
+        grad1.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        grad1.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+        ctx.fillStyle = grad1;
+        ctx.beginPath();
+        ctx.arc(leftPupil.x, leftPupil.y, pupilRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        const grad2 = ctx.createRadialGradient(rightPupil.x, rightPupil.y, 0, rightPupil.x, rightPupil.y, pupilRadius);
+        grad2.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        grad2.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+        ctx.fillStyle = grad2;
+        ctx.beginPath();
+        ctx.arc(rightPupil.x, rightPupil.y, pupilRadius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // PROTOTYPE 3: 3D (Original)
+      if (prototype === '3d') {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius + 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius + 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x, leftPupil.y, pupilRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x, rightPupil.y, pupilRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x - 1, leftPupil.y - 1, pupilRadius * 0.4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x - 1, rightPupil.y - 1, pupilRadius * 0.4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // PROTOTYPE 4: 3D-REALISTIC (Very subtle, natural, less obvious)
+      if (prototype === '3d-realistic') {
+        // Almost invisible eye sockets
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius + 1, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius + 1, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Very muted eye whites - barely noticeable
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Pupils - smaller and more subtle
+        ctx.fillStyle = 'rgba(30, 30, 30, 0.75)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x, leftPupil.y, pupilRadius * 0.85, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x, rightPupil.y, pupilRadius * 0.85, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Tiny, barely visible shine
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x - 0.5, leftPupil.y - 0.5, pupilRadius * 0.25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x - 0.5, rightPupil.y - 0.5, pupilRadius * 0.25, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // PROTOTYPE 5: 3D-SLEEK (Modern, professional, minimal)
+      if (prototype === '3d-sleek') {
+        // No eye sockets - cleaner look
+
+        // Eye whites - crisp and clean
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Sharp pupils
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x, leftPupil.y, pupilRadius * 0.9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x, rightPupil.y, pupilRadius * 0.9, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Single bright shine point
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x - 1, leftPupil.y - 1, pupilRadius * 0.25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x - 1, rightPupil.y - 1, pupilRadius * 0.25, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // PROTOTYPE 6: 3D-SUBTLE (Enterprise-friendly, very subtle)
+      if (prototype === '3d-subtle') {
+        // Very subtle eye whites
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.arc(leftEyeX, leftEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightEyeX, rightEyeY, eyeRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Small, subtle pupils
+        ctx.fillStyle = 'rgba(40, 40, 40, 0.7)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x, leftPupil.y, pupilRadius * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x, rightPupil.y, pupilRadius * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Tiny shine
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.arc(leftPupil.x - 0.5, leftPupil.y - 0.5, pupilRadius * 0.2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(rightPupil.x - 0.5, rightPupil.y - 0.5, pupilRadius * 0.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    // Start animation when image loads
+    img.onload = () => animate();
+  }
+</script>
+
+<style>
+  canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+</style>

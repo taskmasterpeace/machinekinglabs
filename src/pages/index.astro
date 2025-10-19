@@ -1,16 +1,378 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import OctopusLogo from '../components/OctopusLogo.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Machine King Labs | AI-Native Technology Company">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Looping octopus video background -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/images/octopus-loop.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Dark gradient overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Main heading -->
+      <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6">
+        <span class="gradient-text">Machine King Labs</span>
+      </h1>
+
+      <p class="hero-subtitle text-2xl md:text-3xl text-slate-300 font-semibold mb-6">
+        Time is my only rival.
+      </p>
+
+      <p class="hero-description text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8">
+        AI-native technology company building intelligent platforms across multiple domains.
+      </p>
+
+      <p class="hero-location text-slate-500 mb-12">
+        Based in Fairfax, Virginia
+      </p>
+
+      <!-- CTAs - Enterprise Style -->
+      <div class="hero-ctas flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="#projects"
+          class="px-8 py-4 bg-white text-black hover:bg-slate-200 rounded-sm font-semibold transition-all hover:scale-105 shadow-lg"
+        >
+          Explore Our Portfolio
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-slate-600 hover:border-slate-400"
+        >
+          Schedule a Meeting
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Metrics Bar - Enterprise Minimal -->
+  <section class="metrics-bar py-16 bg-zinc-950 border-y border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+        <div class="metric-item">
+          <div class="text-4xl font-bold text-white mb-2">31K+</div>
+          <div class="text-zinc-500 text-sm uppercase tracking-wider">YouTube Subscribers</div>
+        </div>
+        <div class="metric-item">
+          <div class="text-4xl font-bold text-white mb-2">1</div>
+          <div class="text-zinc-500 text-sm uppercase tracking-wider">Provisional Patent</div>
+        </div>
+        <div class="metric-item">
+          <div class="text-4xl font-bold text-white mb-2">30</div>
+          <div class="text-zinc-500 text-sm uppercase tracking-wider">Fortune 500 Applications</div>
+        </div>
+        <div class="metric-item">
+          <div class="text-4xl font-bold text-white mb-2">8</div>
+          <div class="text-zinc-500 text-sm uppercase tracking-wider">AI Officers</div>
+        </div>
+        <div class="metric-item col-span-2 md:col-span-1">
+          <div class="text-4xl font-bold text-white mb-2">2</div>
+          <div class="text-zinc-500 text-sm uppercase tracking-wider">Senior Engineers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-4xl md:text-5xl font-bold text-center mb-4">
+        <span class="gradient-text">Our Portfolio</span>
+      </h2>
+      <p class="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
+        Production applications and innovative AI platforms across multiple domains
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Hey You're Hired - FEATURED (2 columns) -->
+        <div class="md:col-span-2 project-card group bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-900 flex items-center justify-center p-12 border-b border-zinc-800">
+            <img src="/images/hey-youre-hired-logo.png" alt="Hey You're Hired" class="h-48 object-contain group-hover:scale-105 transition-transform opacity-90" />
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <h3 class="text-3xl font-bold text-white">Hey You're Hired</h3>
+              <span class="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 text-xs uppercase tracking-wider rounded-sm">Just Launched</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm uppercase tracking-wider">AI-Powered Career Intelligence</p>
+            <p class="text-zinc-500 mb-4 leading-relaxed">
+              Professional career platform with 30 Fortune 500 applications in active pipeline.
+              AI-powered resume optimization and coaching for $240K-$320K salary range.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Beta → Production</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Marketing Phase</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">0 Paid Users (Launching)</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="https://heyyourehired.com" target="_blank" rel="noopener" class="text-white hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+                Visit Site
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a href="/projects#hey-youre-hired" class="text-zinc-400 hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+                View Details
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TalkAdvantage Pro -->
+        <div class="project-card group bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-900 flex items-center justify-center border-b border-zinc-800">
+            <div class="text-center p-8">
+              <div class="text-6xl mb-4 opacity-60">🎙️</div>
+              <div class="text-white text-2xl font-bold">TalkAdvantage Pro</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white">TalkAdvantage Pro</h3>
+              <span class="px-2 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs uppercase tracking-wider rounded-sm">Patent Pending</span>
+            </div>
+            <p class="text-zinc-400 mb-3 text-sm uppercase tracking-wider">Real-Time Conversational Intelligence</p>
+            <p class="text-zinc-500 mb-4 leading-relaxed text-sm">
+              Voice-activated widget ecosystem with live transcription, dynamic conversation compass,
+              and real-time sentiment analysis.
+            </p>
+            <div class="flex gap-2 mb-4 flex-wrap">
+              <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Development</span>
+            </div>
+            <a href="/projects#talkadvantage-pro" class="text-white hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+              View Details
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+        <!-- Algorithm Institute -->
+        <div class="project-card group bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-900 flex items-center justify-center border-b border-zinc-800">
+            <div class="text-center p-8">
+              <div class="text-6xl mb-4 opacity-60">🎬</div>
+              <div class="text-white text-2xl font-bold">Algorithm Institute</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white">Algorithm Institute</h3>
+              <span class="px-2 py-1 bg-red-500/10 border border-red-500/20 text-red-400 text-xs uppercase tracking-wider rounded-sm">Live</span>
+            </div>
+            <p class="text-zinc-400 mb-3 text-sm uppercase tracking-wider">AI-Driven Content Creation</p>
+            <p class="text-zinc-500 mb-4 leading-relaxed text-sm">
+              Battle rap documentaries with 31K+ YouTube subscribers. Cinematic storytelling approach
+              leveraging AI-assisted video editing and content generation workflows.
+            </p>
+            <div class="flex gap-2 mb-4 flex-wrap">
+              <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">31K+ Subscribers</span>
+              <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Active Production</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="https://www.youtube.com/@AlgorithmInstituteofBR" target="_blank" rel="noopener" class="text-white hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+                YouTube Channel
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a href="/projects#algorithm-institute" class="text-zinc-400 hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+                View Details
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Presidium -->
+        <div class="project-card group bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-900 flex items-center justify-center border-b border-zinc-800">
+            <div class="text-center p-8">
+              <div class="text-6xl mb-4 opacity-60">👑</div>
+              <div class="text-white text-2xl font-bold">The Presidium</div>
+            </div>
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white">The Presidium</h3>
+              <span class="px-2 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs uppercase tracking-wider rounded-sm">Internal Tool</span>
+            </div>
+            <p class="text-zinc-400 mb-3 text-sm uppercase tracking-wider">Multi-Officer AI System</p>
+            <p class="text-zinc-500 mb-4 leading-relaxed text-sm">
+              8 specialized AI officers providing strategic intelligence, competitive analysis,
+              and financial insights. Identified $2.3M+ in funding opportunities.
+            </p>
+            <div class="flex gap-2 mb-4 flex-wrap">
+              <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">8 AI Officers</span>
+              <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">$2.3M+ Identified</span>
+            </div>
+            <a href="/innovation-lab#presidium" class="text-white hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+              View Details
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-black border-t border-zinc-800">
+    <div class="cta-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-white">Ready to Learn More?</h2>
+      <p class="text-xl text-zinc-400 mb-8">
+        Explore our team, dive into our projects, or schedule a meeting to discuss partnership opportunities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/team"
+          class="px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm"
+        >
+          Meet the Team
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero elements fade in on load
+  gsap.from('.hero-title', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.2
+  });
+
+  gsap.from('.hero-subtitle', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.4
+  });
+
+  gsap.from('.hero-description', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.6
+  });
+
+  gsap.from('.hero-location', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.8
+  });
+
+  gsap.from('.hero-ctas', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 1
+  });
+
+  // Metrics bar animation on scroll
+  gsap.from('.metric-item', {
+    scrollTrigger: {
+      trigger: '.metrics-bar',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 50,
+    stagger: 0.1,
+    duration: 0.8
+  });
+
+  // Section title animations
+  gsap.from('.section-title', {
+    scrollTrigger: {
+      trigger: '.section-title',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8
+  });
+
+  // Project cards stagger animation
+  gsap.from('.project-card', {
+    scrollTrigger: {
+      trigger: '#projects',
+      start: 'top 70%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // CTA section animation
+  gsap.from('.cta-section', {
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+</script>
+
+<style>
+  /* Additional hover effects */
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+</style>

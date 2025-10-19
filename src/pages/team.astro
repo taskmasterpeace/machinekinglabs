@@ -1,0 +1,373 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Rocket, Wrench, Globe, MapPin } from 'lucide-astro';
+---
+
+<Layout title="Team | Machine King Labs" description="Meet the Machine King Labs team: AI-native innovators building production-ready intelligent platforms.">
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-zinc-950 via-neutral-950 to-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="page-title text-5xl md:text-6xl font-bold mb-6">
+        <span class="gradient-text">Meet the Team</span>
+      </h1>
+      <p class="text-xl text-zinc-300 max-w-3xl mx-auto">
+        AI-native innovators building production-ready intelligent platforms
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Members Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+        <!-- Robert L. Smith III - CEO (Featured) -->
+        <div class="team-card bg-zinc-950 rounded-sm overflow-hidden border-2 border-zinc-700 hover:border-zinc-500 transition-all group relative">
+          <!-- CEO Badge -->
+          <div class="absolute top-4 right-4 z-10 px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-sm">
+            <span class="text-white text-xs font-bold uppercase tracking-wider">Founder</span>
+          </div>
+
+          <!-- Real Photo -->
+          <div class="aspect-[2/3] bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <img
+              src="/images/team/robert-smith.png"
+              alt="Robert L. Smith III"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-white">Robert L. Smith III</h3>
+            <p class="text-zinc-400 mb-1 font-semibold text-sm uppercase tracking-wider">Founder & CEO</p>
+            <p class="text-zinc-500 mb-4 text-xs">GenAI Architect | 15+ Years AI/ML Engineering</p>
+            <p class="text-zinc-300 mb-4 leading-relaxed text-sm">
+              GenAI Architect with 15+ years engineering production AI systems—RAG pipelines, multi-agent orchestration, and real-time inference. Former Deloitte Senior Solutions Delivery Manager leading Fortune 500 AI deployments. Security background (SOC2/ISO27001) ensuring safe, auditable AI.
+            </p>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-sm text-white mb-2">Key Achievements</h4>
+              <ul class="text-xs text-zinc-400 space-y-1 list-disc list-inside">
+                <li>15+ years engineering production AI/ML systems</li>
+                <li>Led 8-person team at Deloitte (Fortune 500 clients)</li>
+                <li>Filed provisional patent (2025) - meeting intelligence</li>
+                <li>Azure AI, AWS, Security+, Splunk certified</li>
+                <li>Reduced MTTD 40% for healthcare/financial SOCs</li>
+                <li>Built Hey You're Hired + TalkAdvantage to production</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-sm text-white mb-2">Expertise</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">RAG Pipelines</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Vector Databases</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Multi-Agent Systems</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">LLM Evaluation</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">AI Security & Governance</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Team Leadership</span>
+              </div>
+            </div>
+
+            <p class="text-zinc-500 text-xs mb-4 flex items-center gap-1">
+              <MapPin class="w-3 h-3" />
+              Fairfax, Virginia
+            </p>
+
+            <div class="space-y-2">
+              <a href="/team/robert" class="inline-block w-full px-4 py-2 bg-white text-black hover:bg-zinc-200 text-center rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-xs">
+                View Full Profile
+              </a>
+              <a
+                href="https://www.linkedin.com/in/robert-smith-iii-b03479bb/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center w-full px-4 py-2 bg-transparent hover:bg-white/10 rounded-sm transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 text-xs font-semibold uppercase tracking-wider"
+              >
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm3.5 8h-2V6c0-.828.672-1.5 1.5-1.5h.5V2.833H12c-2.025 0-3.667 1.642-3.667 3.667v1.5h-1.5V10h1.5v6.333h2.333V10H13.5L13.5 8z"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a
+                href="mailto:robert@machinekinglabs.com"
+                class="inline-flex items-center justify-center w-full px-4 py-2 bg-transparent hover:bg-white/10 rounded-sm transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 text-xs font-semibold uppercase tracking-wider"
+              >
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abakar Ibrahim -->
+        <div class="team-card bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
+          <!-- Real Photo -->
+          <div class="aspect-[2/3] bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <img
+              src="/images/team/abakar-ibrahim.png"
+              alt="Abakar Ibrahim"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-white">Abakar Ibrahim</h3>
+            <p class="text-zinc-400 mb-1 font-semibold text-sm uppercase tracking-wider">Lead Full-Stack Developer</p>
+            <p class="text-zinc-500 mb-4 text-xs">Senior Software Engineer</p>
+            <p class="text-zinc-300 mb-4 leading-relaxed text-sm">
+              Lead developer for Hey You're Hired, architecting the entire platform from ground up with 4+ years of experience building enterprise applications. Based in Cameroon.
+            </p>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-sm text-white mb-2">Key Achievements</h4>
+              <ul class="text-xs text-zinc-400 space-y-1 list-disc list-inside">
+                <li>Built Hey You're Hired platform solo (frontend + backend)</li>
+                <li>Scalable subscription system with Stripe integration</li>
+                <li>Real-time application tracking for 30 Fortune 500 companies</li>
+                <li>Next.js 15 & Supabase production architecture</li>
+                <li>Previously: Top Rated Plus freelancer (100% success rate)</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-sm text-white mb-2">Tech Stack</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">React</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Next.js</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">FastAPI</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Supabase</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Node.js</span>
+              </div>
+            </div>
+
+            <p class="text-zinc-500 text-xs mb-4 flex items-center gap-1">
+              <MapPin class="w-3 h-3" />
+              Douala, Cameroon
+            </p>
+
+            <div class="space-y-2">
+              <a href="/team/abakar" class="inline-block w-full px-4 py-2 bg-white text-black hover:bg-zinc-200 text-center rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-xs">
+                View Full Profile
+              </a>
+              <a
+                href="https://www.linkedin.com/in/abakar-ibrahim-adam/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center w-full px-4 py-2 bg-transparent hover:bg-white/10 rounded-sm transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 text-xs font-semibold uppercase tracking-wider"
+              >
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm3.5 8h-2V6c0-.828.672-1.5 1.5-1.5h.5V2.833H12c-2.025 0-3.667 1.642-3.667 3.667v1.5h-1.5V10h1.5v6.333h2.333V10H13.5L13.5 8z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kenil Togadiya -->
+        <div class="team-card bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
+          <!-- Real Photo -->
+          <div class="aspect-[2/3] bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <img
+              src="/images/team/kenil-togadiya.png"
+              alt="Kenil Togadiya"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-white">Kenil Togadiya</h3>
+            <p class="text-zinc-400 mb-1 font-semibold text-sm uppercase tracking-wider">Senior Full-Stack Developer</p>
+            <p class="text-zinc-500 mb-4 text-xs">Cloud & MERN Specialist</p>
+            <p class="text-zinc-300 mb-4 leading-relaxed text-sm">
+              Senior full-stack developer specializing in Next.js, Node.js, and MERN stack with AWS and Azure cloud expertise.
+              Crafts dynamic, efficient web solutions for TalkAdvantage Pro.
+            </p>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-sm text-white mb-2">Key Achievements</h4>
+              <ul class="text-xs text-zinc-400 space-y-1 list-disc list-inside">
+                <li>AWS cloud architecture implementation</li>
+                <li>Real-time meeting bot infrastructure</li>
+                <li>Voice-activated widget ecosystem</li>
+                <li>GraphQL API design & optimization</li>
+                <li>Scalable microservices architecture</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="font-semibold text-sm text-white mb-2">Tech Stack</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Next.js</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Node.js</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">AWS</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Azure</span>
+                <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">GraphQL</span>
+              </div>
+            </div>
+
+            <p class="text-zinc-500 text-xs mb-4 flex items-center gap-1">
+              <MapPin class="w-3 h-3" />
+              Surat, India
+            </p>
+
+            <div class="space-y-2">
+              <a href="/team/kenil" class="inline-block w-full px-4 py-2 bg-white text-black hover:bg-zinc-200 text-center rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-xs">
+                View Full Profile
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kenil-togadiya/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center w-full px-4 py-2 bg-transparent hover:bg-white/10 rounded-sm transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 text-xs font-semibold uppercase tracking-wider"
+              >
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm3.5 8h-2V6c0-.828.672-1.5 1.5-1.5h.5V2.833H12c-2.025 0-3.667 1.642-3.667 3.667v1.5h-1.5V10h1.5v6.333h2.333V10H13.5L13.5 8z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Values/Culture Section -->
+  <section class="py-20 bg-black border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12">
+        <span class="gradient-text">Our Values</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="value-card bg-zinc-950 rounded-sm p-8 border border-zinc-800">
+          <div class="mb-4">
+            <Rocket class="w-12 h-12 text-zinc-400" />
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Ship Fast</h3>
+          <p class="text-zinc-400 text-sm">
+            We build production-ready products quickly. Time is our only rival.
+          </p>
+        </div>
+
+        <div class="value-card bg-zinc-950 rounded-sm p-8 border border-zinc-800">
+          <div class="mb-4">
+            <Wrench class="w-12 h-12 text-zinc-400" />
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Build Real Shit</h3>
+          <p class="text-zinc-400 text-sm">
+            No vaporware. We ship working products that solve real problems.
+          </p>
+        </div>
+
+        <div class="value-card bg-zinc-950 rounded-sm p-8 border border-zinc-800">
+          <div class="mb-4">
+            <Globe class="w-12 h-12 text-zinc-400" />
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Remote First</h3>
+          <p class="text-zinc-400 text-sm">
+            Global talent, zero location barriers. Best developers, anywhere.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-zinc-950 border-t border-zinc-800">
+    <div class="cta-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-white">Interested in Our Work?</h2>
+      <p class="text-xl text-zinc-400 mb-8">
+        Explore our portfolio or get in touch to discuss partnership opportunities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/projects" class="px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          Explore Portfolio
+        </a>
+        <a href="/contact" class="px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Page title animation
+  gsap.from('.page-title', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.2
+  });
+
+  // Team cards stagger animation with scale
+  gsap.from('.team-card', {
+    scrollTrigger: {
+      trigger: '.team-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 80,
+    scale: 0.95,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Value cards animation
+  gsap.from('.value-card', {
+    scrollTrigger: {
+      trigger: '.value-card',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power2.out'
+  });
+
+  // CTA section animation
+  gsap.from('.cta-section', {
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+</script>
+
+<style>
+  .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .value-card {
+    transition: transform 0.3s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+  }
+</style>

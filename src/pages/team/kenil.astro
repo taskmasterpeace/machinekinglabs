@@ -1,0 +1,409 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Users, Cloud, Linkedin, Mail, ExternalLink } from 'lucide-astro';
+---
+
+<Layout title="Kenil Togadiya | Machine King Labs" description="Senior Full-Stack Developer at Machine King Labs - Cloud & MERN specialist building scalable AI-powered platforms.">
+  <!-- Hero with 21x9 Looping Video Background -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+    >
+      <source src="/videos/team/kenil video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Overlay Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-32 text-center">
+      <div class="mb-6 flex justify-center">
+        <Cloud class="w-20 h-20 text-zinc-400" />
+      </div>
+      <h1 class="hero-title text-6xl md:text-8xl font-bold mb-6">
+        <span class="gradient-text">Kenil Togadiya</span>
+      </h1>
+      <p class="text-3xl text-white font-semibold mb-3">Senior Full-Stack Developer</p>
+      <p class="text-xl text-zinc-400 mb-10">Cloud & MERN Specialist</p>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://www.linkedin.com/in/kenil-togadiya/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          <Linkedin class="w-4 h-4" />
+          LinkedIn
+        </a>
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biography Section -->
+  <section class="py-20 bg-zinc-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="bio-section text-4xl md:text-5xl font-bold mb-8">
+        <span class="gradient-text">About</span>
+      </h2>
+      <div class="space-y-6">
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          Senior full-stack developer specializing in Next.js, Node.js, and MERN stack with extensive
+          AWS and Azure cloud expertise. Kenil brings enterprise-level scalability and performance
+          optimization to every project, crafting dynamic, efficient web solutions for TalkAdvantage Pro
+          and other Machine King Labs platforms.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          As the technical lead for TalkAdvantage Pro, Kenil architected the cloud infrastructure
+          powering real-time meeting intelligence, voice-activated widgets, and seamless bot integration
+          across multiple platforms. His expertise in microservices architecture and GraphQL API design
+          enables scalable, maintainable systems that grow with business needs.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          Based in Surat, India, Kenil exemplifies global collaboration and technical excellence. His
+          experience spans from startup MVPs to enterprise-grade applications, consistently delivering
+          robust solutions that balance innovation with reliability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="achievements-section text-4xl md:text-5xl font-bold mb-12 text-center">
+        <span class="gradient-text">Key Achievements</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="flex items-center gap-2 mb-4">
+            <Cloud class="w-6 h-6 text-zinc-400" />
+            <h3 class="text-2xl font-bold text-white">AWS Cloud Architecture</h3>
+          </div>
+          <p class="text-zinc-400 mb-4">
+            Designed and implemented scalable cloud infrastructure for TalkAdvantage Pro on AWS with automated deployment pipelines
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">AWS</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Auto-scaling</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Real-Time Meeting Bot Infrastructure</h3>
+          <p class="text-zinc-400 mb-4">
+            Built real-time bot system for meeting platforms with WebSocket connections and low-latency audio processing
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">WebSockets</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Real-time</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Voice-Activated Widget Ecosystem</h3>
+          <p class="text-zinc-400 mb-4">
+            Developed modular widget system with voice activation, real-time transcription, and context-aware AI responses
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Voice AI</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Widgets</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">GraphQL API Design</h3>
+          <p class="text-zinc-400 mb-4">
+            Architected efficient GraphQL APIs with optimized resolvers, data loaders, and caching strategies for performance
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">GraphQL</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">DataLoader</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Scalable Microservices</h3>
+          <p class="text-zinc-400 mb-4">
+            Built microservices architecture with Docker, Kubernetes orchestration, and service mesh for high availability
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Microservices</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Docker</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">K8s</span>
+          </div>
+        </div>
+
+        <div class="achievement-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <h3 class="text-2xl font-bold mb-3 text-white">Azure & Multi-Cloud Expertise</h3>
+          <p class="text-zinc-400 mb-4">
+            Experience deploying and managing applications across AWS, Azure, and hybrid cloud environments
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Azure</span>
+            <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Multi-cloud</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-20 bg-zinc-950 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="tech-section text-4xl md:text-5xl font-bold mb-12 text-center">
+        <span class="gradient-text">Tech Stack</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="tech-category">
+          <h3 class="text-xl font-bold mb-4 text-white">Frontend</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Next.js</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">React</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">TypeScript</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Tailwind CSS</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Vue.js</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3 class="text-xl font-bold mb-4 text-white">Backend</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Node.js</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Express</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">MongoDB</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">GraphQL</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3 class="text-xl font-bold mb-4 text-white">Cloud & DevOps</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">AWS</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Azure</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Docker</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">Kubernetes</span>
+            <span class="px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm rounded-sm font-medium">CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="projects-section text-4xl md:text-5xl font-bold mb-12 text-center">
+        <span class="gradient-text">Featured Work</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="project-card bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-900 flex items-center justify-center">
+            <Cloud class="w-24 h-24 text-zinc-600" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-2xl font-bold text-white">TalkAdvantage Pro</h3>
+              <span class="px-2 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs uppercase tracking-wider rounded-sm">Patent Pending</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm">Meeting intelligence platform - architected cloud infrastructure and real-time bot system</p>
+            <div class="mb-4">
+              <p class="text-xs text-zinc-500 mb-2">Key Contributions:</p>
+              <ul class="text-xs text-zinc-400 space-y-1 list-disc list-inside">
+                <li>AWS cloud architecture & deployment</li>
+                <li>Real-time meeting bot infrastructure</li>
+                <li>Voice-activated widget ecosystem</li>
+                <li>GraphQL API design & optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-video bg-zinc-900 flex items-center justify-center">
+            <Users class="w-24 h-24 text-zinc-600" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-2xl font-bold text-white">Enterprise Solutions</h3>
+              <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs uppercase tracking-wider rounded-sm">Multiple Projects</span>
+            </div>
+            <p class="text-zinc-400 mb-4 text-sm">Portfolio of enterprise-grade applications spanning e-commerce, SaaS platforms, and custom integrations</p>
+            <div class="mb-4">
+              <p class="text-xs text-zinc-500 mb-2">Technologies:</p>
+              <ul class="text-xs text-zinc-400 space-y-1 list-disc list-inside">
+                <li>MERN stack (MongoDB, Express, React, Node.js)</li>
+                <li>Microservices architecture</li>
+                <li>Cloud-native deployments</li>
+                <li>GraphQL & REST APIs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-black border-t border-zinc-800">
+    <div class="cta-section max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Connect with Kenil</h2>
+      <p class="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto">
+        Interested in cloud architecture, scalable systems, or technical collaboration?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://www.linkedin.com/in/kenil-togadiya/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          <Linkedin class="w-5 h-5" />
+          Connect on LinkedIn
+        </a>
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Contact Us
+        </a>
+        <a href="/team" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Back to Team
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero title animation
+  gsap.from('.hero-title', {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    delay: 0.3,
+    ease: 'power3.out'
+  });
+
+  // Biography section
+  gsap.from('.bio-section', {
+    scrollTrigger: {
+      trigger: '.bio-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -40,
+    duration: 0.8
+  });
+
+  // Achievements section
+  gsap.from('.achievements-section', {
+    scrollTrigger: {
+      trigger: '.achievements-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+
+  // Achievement cards stagger
+  gsap.from('.achievement-card', {
+    scrollTrigger: {
+      trigger: '.achievement-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.12,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Tech section
+  gsap.from('.tech-section', {
+    scrollTrigger: {
+      trigger: '.tech-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+
+  // Tech categories stagger
+  gsap.from('.tech-category', {
+    scrollTrigger: {
+      trigger: '.tech-category',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    stagger: 0.15,
+    duration: 0.8
+  });
+
+  // Projects section
+  gsap.from('.projects-section', {
+    scrollTrigger: {
+      trigger: '.projects-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+
+  // Project cards stagger
+  gsap.from('.project-card', {
+    scrollTrigger: {
+      trigger: '.project-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // CTA section
+  gsap.from('.cta-section', {
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+</script>
+
+<style>
+  .achievement-card,
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .achievement-card:hover,
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+</style>

@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Crown, Target, Cpu, Search, DollarSign, BookOpen, PenTool, Brain, TrendingUp } from 'lucide-astro';
+---
+
+<Layout title="Innovation Lab | Machine King Labs" description="R&D prototypes and internal AI systems powering our products and partners.">
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-zinc-950 via-neutral-950 to-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="page-title text-5xl md:text-6xl font-bold mb-6">
+        <span class="gradient-text">Innovation Lab</span>
+      </h1>
+      <p class="text-xl text-zinc-300 max-w-3xl mx-auto mb-8">
+        R&D prototypes and internal AI systems powering our products and partners
+      </p>
+
+      <!-- Quick Actions -->
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/projects#hey-youre-hired" class="px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          View Hey You're Hired
+        </a>
+        <a href="/projects#talkadvantage-pro" class="px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          View TalkAdvantage Pro
+        </a>
+        <a href="/contact" class="px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          Discuss Licensing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured: The Presidium -->
+  <section id="presidium" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="featured-badge text-center mb-8">
+        <span class="px-6 py-2 bg-zinc-900 border border-zinc-700 text-zinc-300 font-semibold rounded-sm uppercase tracking-wider text-sm">
+          Featured Project
+        </span>
+      </div>
+
+      <div class="presidium-card bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <!-- Visual Side -->
+          <div class="aspect-square md:aspect-auto bg-zinc-900 flex items-center justify-center p-16">
+            <div class="text-center">
+              <div class="mb-6 flex justify-center">
+                <Crown class="w-32 h-32 text-zinc-400" />
+              </div>
+              <div class="text-white text-4xl font-bold mb-2">The Presidium</div>
+              <div class="text-zinc-400 text-lg">8-Officer AI Coordination System</div>
+            </div>
+          </div>
+
+          <!-- Content Side -->
+          <div class="p-8 md:p-12">
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="text-4xl font-bold text-white">The Presidium</h2>
+              <span class="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 text-xs uppercase tracking-wider rounded-sm">Production</span>
+            </div>
+
+            <p class="text-zinc-400 text-lg mb-2 uppercase tracking-wider">Multi-Officer AI Coordination System</p>
+
+            <!-- Problem → Solution -->
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg mb-2 text-white">Problem</h3>
+              <p class="text-zinc-300 leading-relaxed">
+                Coordinating strategy, research, finance, and content across teams is slow and fragmented.
+              </p>
+            </div>
+
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg mb-2 text-white">Solution</h3>
+              <p class="text-zinc-300 leading-relaxed">
+                8 specialized AI officers orchestrate strategic intelligence, competitive analysis, and financial insights in real-time via email.
+              </p>
+            </div>
+
+            <!-- Proof: Results -->
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg mb-3 text-white">Proven Results</h3>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-zinc-900 p-3 rounded-sm border border-zinc-800">
+                  <div class="text-2xl font-bold text-white mb-1">$2.3M+</div>
+                  <div class="text-xs text-zinc-400 uppercase tracking-wider">Grant Opportunities</div>
+                </div>
+                <div class="bg-zinc-900 p-3 rounded-sm border border-zinc-800">
+                  <div class="text-2xl font-bold text-white mb-1">10s</div>
+                  <div class="text-xs text-zinc-400 uppercase tracking-wider">Response Time</div>
+                </div>
+                <div class="bg-zinc-900 p-3 rounded-sm border border-zinc-800">
+                  <div class="text-2xl font-bold text-white mb-1">8</div>
+                  <div class="text-xs text-zinc-400 uppercase tracking-wider">AI Officers</div>
+                </div>
+                <div class="bg-zinc-900 p-3 rounded-sm border border-zinc-800">
+                  <div class="text-2xl font-bold text-white mb-1">100%</div>
+                  <div class="text-xs text-zinc-400 uppercase tracking-wider">Uptime</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Status Timeline -->
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg mb-3 text-white">Status</h3>
+              <div class="flex items-center gap-2">
+                <div class="flex-1 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-zinc-600 to-white" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="flex justify-between mt-2 text-xs text-zinc-500">
+                <span>Concept</span>
+                <span>Prototype</span>
+                <span>Internal</span>
+                <span>Pilot</span>
+                <span class="text-white font-semibold">Production</span>
+              </div>
+              <p class="mt-3 text-sm text-zinc-400">
+                Next: Customer pilots Q4 2025 | Integrations: G Suite, Slack, Teams
+              </p>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg mb-3 text-white">Tech Stack</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">FastAPI</span>
+                <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">OpenAI GPT-4o</span>
+                <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Supabase</span>
+                <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Memory MCP</span>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex gap-4">
+              <a href="/contact" class="px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+                Request Licensing
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Officers Section - Role-Based Labels -->
+        <div class="border-t border-zinc-800 p-8 md:p-12 bg-zinc-950">
+          <h3 class="text-2xl font-bold mb-6 text-center text-white">8 Specialized AI Officers</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <Target class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Strategic Coordinator</h4>
+              <p class="text-xs text-zinc-400">Orchestrates multi-officer responses and strategic planning</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <Cpu class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Technical Intelligence</h4>
+              <p class="text-xs text-zinc-400">Codebase analysis and technical architecture review</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <Search class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Competitive Intelligence</h4>
+              <p class="text-xs text-zinc-400">Market research and competitive positioning analysis</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <DollarSign class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Financial Strategy</h4>
+              <p class="text-xs text-zinc-400">Grant identification and revenue optimization</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <BookOpen class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Memory & Knowledge</h4>
+              <p class="text-xs text-zinc-400">Institutional knowledge and context management</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <PenTool class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Content Creation</h4>
+              <p class="text-xs text-zinc-400">Marketing materials and creative content</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <Brain class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">Behavioral Intelligence</h4>
+              <p class="text-xs text-zinc-400">User behavior analysis and personality insights</p>
+            </div>
+
+            <div class="officer-card bg-zinc-900 rounded-sm p-4 border border-zinc-800 hover:border-zinc-600 transition-all">
+              <div class="mb-2">
+                <TrendingUp class="w-8 h-8 text-zinc-400" />
+              </div>
+              <h4 class="font-bold text-base mb-1 text-white">SEO & Acquisition</h4>
+              <p class="text-xs text-zinc-400">Search optimization and customer acquisition</p>
+            </div>
+
+          </div>
+
+          <div class="mt-6 text-center">
+            <p class="text-sm text-zinc-500">Powers: TalkAdvantage Pro, Hey You're Hired, and internal operations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional R&D Projects -->
+  <section class="py-20 bg-black">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12">
+        <span class="gradient-text">Additional R&D Initiatives</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="rd-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🧠</div>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm uppercase tracking-wider">Prototype</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Context Pack System</h3>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Knowledge retention and AI memory management for cross-session intelligence.
+          </p>
+          <p class="text-zinc-500 text-xs mb-4">Used in: Hey You're Hired, TalkAdvantage Pro</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Supabase</span>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="rd-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🎯</div>
+            <span class="px-2 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs rounded-sm uppercase tracking-wider">Patent Pending</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Conversation Intelligence</h3>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Real-time conversation analysis and intelligent endpointing for meetings.
+          </p>
+          <p class="text-zinc-500 text-xs mb-4">Used in: TalkAdvantage Pro</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">AssemblyAI</span>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Real-time AI</span>
+          </div>
+        </div>
+
+        <div class="rd-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">⚖️</div>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm uppercase tracking-wider">Internal</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">AI Policy Generation</h3>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Automated legal document drafting and compliance documentation.
+          </p>
+          <p class="text-zinc-500 text-xs mb-4">Used in: Internal operations</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">OpenAI</span>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Legal Tech</span>
+          </div>
+        </div>
+
+        <div class="rd-card bg-zinc-950 rounded-sm p-8 border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="text-4xl">🔧</div>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm uppercase tracking-wider">Production</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Cross-Platform AI Framework</h3>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Reusable AI components and integration frameworks for rapid development.
+          </p>
+          <p class="text-zinc-500 text-xs mb-4">Used in: All products</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">FastAPI</span>
+            <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Microservices</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Licensing CTA -->
+  <section class="py-20 bg-zinc-950 border-t border-zinc-800">
+    <div class="cta-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-white">Enterprise Licensing Available</h2>
+      <p class="text-xl text-zinc-400 mb-8">
+        The Presidium and other R&D systems are available for white-label licensing and strategic partnerships.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+          Discuss Licensing
+        </a>
+        <a href="/projects" class="px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          View Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Page title animation
+  gsap.from('.page-title', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.2
+  });
+
+  // Featured badge animation
+  gsap.from('.featured-badge', {
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.8,
+    ease: 'back.out(1.7)'
+  });
+
+  // Presidium card animation
+  gsap.from('.presidium-card', {
+    scrollTrigger: {
+      trigger: '.presidium-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 80,
+    duration: 1,
+    ease: 'power3.out'
+  });
+
+  // Officer cards stagger animation
+  gsap.from('.officer-card', {
+    scrollTrigger: {
+      trigger: '.officer-card',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    stagger: 0.1,
+    duration: 0.6,
+    ease: 'power2.out'
+  });
+
+  // R&D cards stagger animation
+  gsap.from('.rd-card', {
+    scrollTrigger: {
+      trigger: '.rd-card',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // CTA section animation
+  gsap.from('.cta-section', {
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8
+  });
+</script>
+
+<style>
+  .rd-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .rd-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .officer-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .officer-card:hover {
+    transform: translateY(-4px);
+  }
+</style>

@@ -1,0 +1,148 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "AI-native technology company building intelligent platforms across multiple domains." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-black text-white antialiased">
+    <!-- Navigation - Modern Enterprise -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-2xl border-b border-zinc-800/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-3 group">
+            <div class="relative">
+              <img src="/images/machine-king-labs-logo.png" alt="Machine King Labs" class="h-11 w-11 opacity-90 group-hover:opacity-100 transition-opacity" />
+            </div>
+            <span class="font-bold text-xl tracking-tight leading-none">Machine King Labs</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a href="/" class="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Home</a>
+            <a href="/about" class="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">About</a>
+            <a href="/projects" class="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Portfolio</a>
+            <a href="/innovation-lab" class="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Innovation Lab</a>
+            <a href="/team" class="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Team</a>
+            <a href="/contact" class="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Contact</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button class="lg:hidden p-2 rounded-md hover:bg-zinc-900/50 transition-colors" id="mobile-menu-btn" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="lg:hidden hidden" id="mobile-menu">
+        <div class="px-4 pt-2 pb-4 space-y-1 bg-zinc-950 border-t border-zinc-800/50">
+          <a href="/" class="block px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Home</a>
+          <a href="/about" class="block px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">About</a>
+          <a href="/projects" class="block px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Portfolio</a>
+          <a href="/innovation-lab" class="block px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Innovation Lab</a>
+          <a href="/team" class="block px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-900/50 rounded-md transition-all">Team</a>
+          <a href="/contact" class="block px-4 py-3 text-sm font-semibold bg-white text-black hover:bg-zinc-200 rounded-md transition-all text-center">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <slot />
+    </main>
+
+    <!-- Footer - Enterprise Minimal -->
+    <footer class="bg-black border-t border-zinc-800 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-white">Machine King Labs, LLC</h3>
+            <p class="text-zinc-500 text-sm">AI-native technology company building intelligent platforms.</p>
+            <p class="text-zinc-500 mt-2 text-sm">Fairfax, Virginia</p>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-white">Quick Links</h3>
+            <ul class="space-y-2 text-zinc-500 text-sm">
+              <li><a href="/projects" class="hover:text-zinc-300 transition-colors">Portfolio</a></li>
+              <li><a href="/team" class="hover:text-zinc-300 transition-colors">Team</a></li>
+              <li><a href="/contact" class="hover:text-zinc-300 transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-sm mb-4 uppercase tracking-wider text-white">Team</h3>
+            <ul class="space-y-2 text-zinc-500 text-sm">
+              <li><a href="/portal" class="hover:text-zinc-300 transition-colors">Team Portal</a></li>
+            </ul>
+            <h3 class="font-bold text-sm mb-2 mt-6 uppercase tracking-wider text-white">Contact</h3>
+            <p class="text-zinc-500 text-sm">robert@machinekinglabs.com</p>
+          </div>
+        </div>
+
+        <div class="border-t border-zinc-800 mt-8 pt-8 text-center text-zinc-600 text-xs uppercase tracking-wider">
+          <p>&copy; {new Date().getFullYear()} Machine King Labs, LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      // Toggle menu on button click
+      mobileMenuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking a link
+      const mobileLinks = mobileMenu?.querySelectorAll('a');
+      mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+        });
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (mobileMenu && mobileMenuBtn &&
+            !mobileMenu.contains(target) &&
+            !mobileMenuBtn.contains(target)) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>
