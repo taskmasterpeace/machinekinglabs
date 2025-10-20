@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Hey You're Hired -->
       <div id="hey-youre-hired" class="project-detail bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800">
         <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="aspect-square md:aspect-auto bg-zinc-900 flex items-center justify-center p-16">
+          <div class="aspect-square md:aspect-auto bg-white flex items-center justify-center p-8">
             <img src="/images/hey-youre-hired-logo.png" alt="Hey You're Hired" class="w-full max-w-md object-contain" />
           </div>
           <div class="p-8 md:p-12">
@@ -106,11 +106,8 @@ import Layout from '../layouts/Layout.astro';
               <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">WebSocket</span>
             </div>
           </div>
-          <div class="order-1 md:order-2 aspect-square md:aspect-auto bg-zinc-900 flex items-center justify-center p-12">
-            <div class="text-center">
-              <div class="text-9xl mb-6">🎙️</div>
-              <div class="text-white text-3xl font-bold">TalkAdvantage Pro</div>
-            </div>
+          <div class="order-1 md:order-2 aspect-square md:aspect-auto bg-white flex items-center justify-center p-8">
+            <img src="/images/talkadvantagepro.png" alt="TalkAdvantage Pro" class="w-full max-w-md object-contain" />
           </div>
         </div>
       </div>
@@ -118,11 +115,8 @@ import Layout from '../layouts/Layout.astro';
       <!-- Algorithm Institute -->
       <div id="algorithm-institute" class="project-detail bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800">
         <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="aspect-square md:aspect-auto bg-zinc-900 flex items-center justify-center p-12">
-            <div class="text-center">
-              <div class="text-9xl mb-6">🎬</div>
-              <div class="text-white text-3xl font-bold">Algorithm Institute</div>
-            </div>
+          <div class="aspect-square md:aspect-auto bg-white flex items-center justify-center p-8">
+            <img src="/images/aiobr.png" alt="Algorithm Institute of Battle Rap" class="w-full max-w-md object-contain" />
           </div>
           <div class="p-8 md:p-12">
             <div class="flex items-center gap-3 mb-4">
@@ -163,6 +157,57 @@ import Layout from '../layouts/Layout.astro';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Presidium -->
+      <div id="presidium" class="project-detail bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="order-2 md:order-1 p-8 md:p-12">
+            <div class="flex items-center gap-3 mb-4">
+              <h2 class="text-3xl font-bold text-white">The Presidium</h2>
+              <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs uppercase tracking-wider rounded-sm">Internal Tool</span>
+            </div>
+            <p class="text-zinc-400 text-lg mb-6 uppercase tracking-wider">Multi-Officer AI Coordination System</p>
+            <p class="text-zinc-300 mb-6 leading-relaxed">
+              8 specialized AI officers providing strategic intelligence, competitive analysis, and financial insights
+              via email. Identified $2.3M+ in funding opportunities for internal operations.
+            </p>
+
+            <h3 class="font-semibold text-lg mb-3 text-white">Key Features:</h3>
+            <ul class="text-zinc-400 space-y-2 mb-6 list-disc list-inside">
+              <li>8 specialized AI officers with distinct expertise</li>
+              <li>Email-based coordination and intelligence</li>
+              <li>Strategic planning and competitive analysis</li>
+              <li>Grant identification and financial optimization</li>
+              <li>Institutional knowledge management</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-3 text-white">Status:</h3>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Production</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">$2.3M+ Identified</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">8 AI Officers</span>
+            </div>
+
+            <h3 class="font-semibold text-lg mb-3 text-white">Tech Stack:</h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">FastAPI</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">OpenAI GPT-4o</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Supabase</span>
+              <span class="px-3 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Memory MCP</span>
+            </div>
+
+            <a href="/innovation-lab#presidium" class="inline-flex items-center px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm">
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          <div class="order-1 md:order-2 aspect-square md:aspect-auto bg-white flex items-center justify-center p-8">
+            <img src="/images/presidium.png" alt="The Presidium" class="w-full max-w-md object-contain" />
           </div>
         </div>
       </div>
