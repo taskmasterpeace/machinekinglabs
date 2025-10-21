@@ -1,11 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
+import { Crown, Linkedin, Mail, ExternalLink, Github, Film } from 'lucide-astro';
 ---
 
 <Layout title="Robert L. Smith III | Machine King Labs" description="Founder & CEO of Machine King Labs - AI-native innovator bringing cinematic storytelling to product development.">
   <!-- Hero with 21x9 Looping Video Background -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative min-h-screen flex items-end justify-center overflow-hidden pb-16">
     <!-- Video Background -->
     <video
       autoplay
@@ -21,7 +21,7 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-6xl mx-auto px-4 py-32 text-center">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 pb-8 text-center">
       <div class="mb-6 flex justify-center">
         <Crown class="w-20 h-20 text-zinc-400" />
       </div>
@@ -29,8 +29,8 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
         <span class="gradient-text">Robert L. Smith III</span>
       </h1>
       <p class="text-3xl text-white font-semibold mb-3">Founder & CEO</p>
-      <p class="text-xl text-zinc-400 mb-6">GenAI Architect | 15+ Years AI/ML Engineering</p>
-      <p class="text-lg text-zinc-500 mb-4">Former Deloitte Senior Solutions Delivery Manager</p>
+      <p class="text-xl text-zinc-400 mb-3">Visionary Architect | Strategic Product Leader</p>
+      <p class="text-lg text-zinc-500 mb-6">15+ Years AI/ML Engineering | Former Deloitte Senior Solutions Delivery Manager</p>
       <p class="text-2xl text-white italic max-w-3xl mx-auto leading-relaxed mb-10">
         "With AI anything is possible"
       </p>
@@ -41,7 +41,15 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
           <Mail class="w-4 h-4" />
           Email
         </a>
-        <a href="https://calendly.com/robert-machinekinglabs" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+        <a href="https://github.com/taskmasterpeace" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          <Github class="w-4 h-4" />
+          GitHub
+        </a>
+        <a href="https://www.imdb.com/name/nm5866106/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          <Film class="w-4 h-4" />
+          IMDb
+        </a>
+        <a href="https://calendly.com/taskmasterpeace/institute" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
           Schedule Meeting
         </a>
       </div>
@@ -56,28 +64,43 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
       </h2>
       <div class="space-y-6">
         <p class="text-lg text-zinc-300 leading-relaxed">
-          GenAI Architect and AI Product Leader with 15+ years engineering production AI systems—from RAG pipelines
-          and multi-agent orchestration to real-time inference and LLM evaluation. Expert in vector databases,
+          Hands-on GenAI Architect and Technical Leader with 15+ years engineering production AI systems at enterprise
+          scale. Founder and strategic architect of Machine King Labs, where vision meets execution—personally designing
+          and coding every platform from database architecture to deployment pipelines. Not just a strategist, but a builder
+          who writes code, optimizes infrastructure, and delivers working systems. This unique combination of strategic vision
+          and technical execution makes Robert equally valuable as a founder, technical advisor, or senior engineering leader.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          Expert in RAG pipelines, multi-agent orchestration, real-time inference, LLM evaluation, vector databases,
           knowledge graphs, prompt engineering, and AI governance frameworks (SOC2/ISO27001). Proven track record
           building AI platforms at Fortune 500 scale, optimizing GPU and cost efficiency, and delivering measurable
-          business impact across healthcare, consulting, and high-growth startups.
+          ROI across healthcare, financial services, and high-growth startups. Proficient in Python, TypeScript, FastAPI,
+          Next.js, PostgreSQL, Docker, and cloud infrastructure (AWS, Azure).
         </p>
         <p class="text-lg text-zinc-300 leading-relaxed">
-          As Deloitte Senior Solutions Delivery Manager (2018-2025), led 8-person international team delivering
-          Splunk observability and SIEM solutions for Fortune 500 healthcare and financial services clients,
-          managing 500+ security use cases and reducing MTTD by 40%. Presented GenAI integration strategies at
-          Deloitte Impact Day 2023, demonstrating AI-enhanced workflows for 200+ consulting professionals.
+          As Deloitte Senior Solutions Delivery Manager (2018-2025), led 8-person international team (USA, Spain, India)
+          delivering Splunk observability and SIEM solutions for Fortune 500 healthcare and financial services clients,
+          managing 500+ security use cases and reducing MTTD by 40%. Presented GenAI integration strategies at Deloitte
+          Impact Day 2023, demonstrating AI-enhanced workflows for 200+ consulting professionals. Consistently recognized
+          for technical excellence, rapid delivery, and ability to translate complex AI capabilities into business value.
         </p>
         <p class="text-lg text-zinc-300 leading-relaxed">
-          Founded Machine King Labs (2025) to build conversational intelligence and AI-powered SaaS platforms.
-          Filed provisional patent for real-time meeting enhancement technology. Deep security and observability
-          background ensures safe, auditable AI deployments. Microsoft Azure AI, AWS, CompTIA Security+, and
-          Splunk certified.
+          Founded Machine King Labs (2025) to build conversational intelligence and AI-powered SaaS platforms, including
+          Hey You're Hired (serving 30 Fortune 500 companies), The Presidium (8-officer AI coordination system), and
+          TalkAdvantage Pro (patent pending meeting intelligence platform). Deep security and observability background
+          ensures safe, auditable AI deployments. Microsoft Azure AI, AWS, CompTIA Security+, and Splunk certified.
         </p>
         <p class="text-lg text-zinc-300 leading-relaxed">
-          Unique combination of technical AI/ML engineering expertise with production/storytelling skills from
-          8+ years directing award-winning media projects. This cross-disciplinary approach enables exceptional
-          product vision—building AI systems that are both technically sophisticated and genuinely useful for end users.
+          Unique combination of technical AI/ML engineering expertise with production/storytelling skills from 8+ years
+          directing award-winning media projects. This cross-disciplinary approach enables exceptional product vision—building
+          AI systems that are both technically sophisticated and genuinely useful for end users. Award-winning filmmaker with
+          IMDb credits, bringing narrative design and user experience thinking to every technical architecture.
+        </p>
+        <p class="text-lg text-zinc-300 leading-relaxed">
+          Born and raised in Miami, Florida. Proud graduate of University of Central Florida and Bethune-Cookman University
+          (HBCU). Member of Alpha Phi Alpha Fraternity, Inc., embodying the fraternity's commitment to scholarship, fellowship,
+          and service. This foundation of excellence and leadership continues to drive innovation at Machine King Labs, where
+          cutting-edge AI technology meets real-world business impact.
         </p>
       </div>
     </div>
@@ -198,7 +221,7 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
 
         <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
           <div class="aspect-video bg-zinc-950 flex items-center justify-center p-12">
-            <img src="/images/presidium-logo.png" alt="The Presidium" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
+            <img src="/images/presidium.png" alt="The Presidium" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
@@ -211,7 +234,7 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
 
         <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
           <div class="aspect-video bg-zinc-950 flex items-center justify-center p-12">
-            <img src="/images/algorithm-institute-logo.png" alt="Algorithm Institute" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
+            <img src="/images/aiobr.png" alt="Algorithm Institute" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
@@ -226,9 +249,9 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
           </div>
         </div>
 
-        <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
-          <div class="aspect-video bg-zinc-950 flex items-center justify-center">
-            <Crown class="w-24 h-24 text-zinc-600" />
+        <div class="project-card bg-zinc-900 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all group">
+          <div class="aspect-video bg-zinc-950 flex items-center justify-center p-12">
+            <img src="/images/talkadvantagepro.png" alt="TalkAdvantage Pro" class="h-32 object-contain group-hover:scale-105 transition-transform opacity-90" />
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
@@ -272,7 +295,15 @@ import { Crown, Linkedin, Mail, ExternalLink } from 'lucide-astro';
           <Mail class="w-5 h-5" />
           Email Robert
         </a>
-        <a href="https://calendly.com/robert-machinekinglabs" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+        <a href="https://github.com/taskmasterpeace" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          <Github class="w-5 h-5" />
+          View GitHub
+        </a>
+        <a href="https://www.imdb.com/name/nm5866106/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
+          <Film class="w-5 h-5" />
+          View IMDb
+        </a>
+        <a href="https://calendly.com/taskmasterpeace/institute" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">
           Schedule Meeting
         </a>
         <a href="/team" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 rounded-sm font-semibold transition-all hover:scale-105 border border-zinc-600 hover:border-zinc-400 uppercase tracking-wider text-sm">

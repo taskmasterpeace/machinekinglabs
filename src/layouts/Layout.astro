@@ -71,9 +71,12 @@ const { title, description = "AI-native technology company building intelligent 
           </div>
 
           <!-- Mobile menu button -->
-          <button class="lg:hidden p-2 rounded-md hover:bg-zinc-900/50 transition-colors" id="mobile-menu-btn" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button class="lg:hidden p-2 rounded-md hover:bg-zinc-900/50 transition-all" id="mobile-menu-btn" aria-label="Toggle menu">
+            <svg class="w-6 h-6 transition-transform" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="w-6 h-6 hidden transition-transform" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -155,24 +158,45 @@ const { title, description = "AI-native technology company building intelligent 
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
 
       // Toggle menu on button click
       mobileMenuBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
+        const isHidden = mobileMenu?.classList.toggle('hidden');
+
+        // Toggle icons
+        menuIconOpen?.classList.toggle('hidden');
+        menuIconClose?.classList.toggle('hidden');
+
+        // Add active state to button
+        if (!isHidden) {
+          mobileMenuBtn?.classList.add('bg-zinc-900');
+        } else {
+          mobileMenuBtn?.classList.remove('bg-zinc-900');
+        }
       });
+
+      // Helper function to close menu and reset icons
+      function closeMenu() {
+        mobileMenu?.classList.add('hidden');
+        menuIconOpen?.classList.remove('hidden');
+        menuIconClose?.classList.add('hidden');
+        mobileMenuBtn?.classList.remove('bg-zinc-900');
+      }
 
       // Close menu when clicking a link
       const mobileLinks = mobileMenu?.querySelectorAll('a');
       mobileLinks?.forEach(link => {
         link.addEventListener('click', () => {
-          mobileMenu?.classList.add('hidden');
+          closeMenu();
         });
       });
 
       // Close menu on Escape key
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
+          closeMenu();
         }
       });
 
@@ -181,8 +205,9 @@ const { title, description = "AI-native technology company building intelligent 
         const target = e.target as HTMLElement;
         if (mobileMenu && mobileMenuBtn &&
             !mobileMenu.contains(target) &&
-            !mobileMenuBtn.contains(target)) {
-          mobileMenu.classList.add('hidden');
+            !mobileMenuBtn.contains(target) &&
+            !mobileMenu.classList.contains('hidden')) {
+          closeMenu();
         }
       });
     </script>
