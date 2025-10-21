@@ -26,8 +26,13 @@ import OctopusLogo from '../components/OctopusLogo.astro';
         <span class="gradient-text">Machine King Labs</span>
       </h1>
 
-      <p class="hero-subtitle text-2xl md:text-3xl text-slate-300 font-semibold mb-6">
-        Time is our only rival.
+      <p class="hero-subtitle text-2xl md:text-3xl text-slate-300 font-semibold mb-6 relative h-12">
+        <span class="hero-subtitle-text absolute inset-0 flex items-center justify-center opacity-100">
+          Time is our only rival.
+        </span>
+        <span class="hero-subtitle-text absolute inset-0 flex items-center justify-center opacity-0">
+          We build tomorrow.
+        </span>
       </p>
 
       <p class="hero-description text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8">
@@ -157,12 +162,20 @@ import OctopusLogo from '../components/OctopusLogo.astro';
             <div class="flex gap-2 mb-4 flex-wrap">
               <span class="px-2 py-1 bg-zinc-900 text-zinc-400 text-xs rounded-sm">Development</span>
             </div>
-            <a href="/projects#talkadvantage-pro" class="text-white hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
-              View Details
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            <div class="flex gap-4">
+              <a href="https://www.talkadvantagepro.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+                Visit Site
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a href="/projects#talkadvantage-pro" class="text-zinc-400 hover:text-zinc-300 font-semibold inline-flex items-center text-sm uppercase tracking-wider">
+                View Details
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -354,9 +367,44 @@ import OctopusLogo from '../components/OctopusLogo.astro';
     y: 40,
     duration: 0.8
   });
+
+  // Alternating hero subtitle animation
+  const subtitleTexts = document.querySelectorAll('.hero-subtitle-text');
+  let currentIndex = 0;
+
+  function animateSubtitle() {
+    const current = subtitleTexts[currentIndex];
+    const next = subtitleTexts[(currentIndex + 1) % subtitleTexts.length];
+
+    // Fade out current text
+    gsap.to(current, {
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.inOut'
+    });
+
+    // Fade in next text
+    gsap.to(next, {
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.inOut'
+    });
+
+    currentIndex = (currentIndex + 1) % subtitleTexts.length;
+  }
+
+  // Start the animation loop after initial page load animations
+  setTimeout(() => {
+    setInterval(animateSubtitle, 4000); // Change every 4 seconds
+  }, 2000); // Wait 2 seconds after page load
 </script>
 
 <style>
+  /* Hero subtitle animation */
+  .hero-subtitle-text {
+    transition: opacity 1s ease-in-out;
+  }
+
   /* Additional hover effects */
   .project-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;

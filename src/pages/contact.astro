@@ -30,8 +30,8 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
           <p class="text-zinc-400 mb-4">
             Reach out directly to our founder for investment inquiries or partnership opportunities.
           </p>
-          <a href="mailto:robert@machinekinglabs.com" class="text-white hover:text-zinc-300 font-semibold text-lg">
-            robert@machinekinglabs.com
+          <a href="mailto:robertsmith@machinekinglabs.com" class="text-white hover:text-zinc-300 font-semibold text-lg">
+            robertsmith@machinekinglabs.com
           </a>
         </div>
 
@@ -45,9 +45,9 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
             Book a time on our calendar for a detailed discussion about our projects and opportunities.
           </p>
           <a
-            href="https://calendly.com/robert-machinekinglabs"
+            href="https://calendly.com/robertsmith-machinekinglabs/30min"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="inline-block px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all hover:scale-105 uppercase tracking-wider text-sm"
           >
             Schedule Meeting
@@ -71,16 +71,29 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
         </div>
       </div>
 
-      <!-- Contact Form Section (Optional) -->
+      <!-- Contact Form Section -->
       <div class="form-section mt-16">
         <h2 class="text-3xl font-bold mb-8 text-center text-white">Send Us a Message</h2>
-        <form class="bg-zinc-950 rounded-sm p-8 border border-zinc-800 max-w-2xl mx-auto">
+        <!--
+          SETUP INSTRUCTIONS:
+          1. Sign up for a free Formspree account at https://formspree.io
+          2. Create a new form in your Formspree dashboard
+          3. Replace YOUR_FORM_ID below with your actual Formspree form ID
+          4. Remove these comments once configured
+        -->
+        <form
+          action="https://formspree.io/f/mldpvzqk"
+          method="POST"
+          class="bg-zinc-950 rounded-sm p-8 border border-zinc-800 max-w-2xl mx-auto"
+        >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label class="block text-sm font-semibold mb-2 text-white" for="name">Name</label>
               <input
                 type="text"
                 id="name"
+                name="name"
+                required
                 class="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-sm focus:border-zinc-600 focus:outline-none transition-colors text-white"
                 placeholder="Your name"
               />
@@ -90,6 +103,8 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
               <input
                 type="email"
                 id="email"
+                name="email"
+                required
                 class="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-sm focus:border-zinc-600 focus:outline-none transition-colors text-white"
                 placeholder="your@email.com"
               />
@@ -101,6 +116,7 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
             <input
               type="text"
               id="company"
+              name="company"
               class="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-sm focus:border-zinc-600 focus:outline-none transition-colors text-white"
               placeholder="Your company"
             />
@@ -110,6 +126,8 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
             <label class="block text-sm font-semibold mb-2 text-white" for="subject">Subject</label>
             <select
               id="subject"
+              name="subject"
+              required
               class="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-sm focus:border-zinc-600 focus:outline-none transition-colors text-white"
             >
               <option>Investment Inquiry</option>
@@ -123,7 +141,9 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
             <label class="block text-sm font-semibold mb-2 text-white" for="message">Message</label>
             <textarea
               id="message"
+              name="message"
               rows="6"
+              required
               class="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-sm focus:border-zinc-600 focus:outline-none transition-colors resize-none text-white"
               placeholder="Tell us about your inquiry..."
             ></textarea>
@@ -137,7 +157,7 @@ import { Mail, Calendar, MapPin } from 'lucide-astro';
           </button>
 
           <p class="text-sm text-zinc-500 mt-4 text-center">
-            Form integration coming soon. For now, please email us directly.
+            We'll get back to you within 24 hours.
           </p>
         </form>
       </div>
