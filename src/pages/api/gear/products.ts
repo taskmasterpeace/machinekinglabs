@@ -28,6 +28,13 @@ export const GET: APIRoute = async ({ request }) => {
     // Fetch products from Printful
     const products = await getAllProductsWithVariants();
 
+    // Debug: Log first variant's complete structure
+    if (products.length > 0 && products[0].sync_variants.length > 0) {
+      console.log('=== FIRST VARIANT RAW DATA ===');
+      console.log(JSON.stringify(products[0].sync_variants[0], null, 2));
+      console.log('=== END RAW DATA ===');
+    }
+
     // Transform for client consumption
     const transformedProducts = products.map((product) => ({
       id: product.sync_product.id,
