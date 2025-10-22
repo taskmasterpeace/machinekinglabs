@@ -28,10 +28,27 @@
     <!-- Product Content -->
     <div id="modal-body" class="modal-body" style="display: none;">
       <div class="modal-grid">
-        <!-- Product Image -->
+        <!-- Product Image with Carousel -->
         <div class="product-image-section">
           <div class="product-image-container">
             <img id="product-image" src="" alt="" class="product-image" />
+
+            <!-- Carousel Controls -->
+            <div id="carousel-controls" class="carousel-controls" style="display: none;">
+              <button id="prev-image" class="carousel-btn carousel-btn-prev" aria-label="Previous image">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button id="next-image" class="carousel-btn carousel-btn-next" aria-label="Next image">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Image Indicators -->
+            <div id="image-indicators" class="image-indicators" style="display: none;"></div>
           </div>
         </div>
 
@@ -199,6 +216,7 @@
   }
 
   .product-image-container {
+    position: relative;
     background: white;
     border-radius: 8px;
     padding: 2rem;
@@ -212,6 +230,77 @@
     height: auto;
     max-height: 500px;
     object-fit: contain;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    pointer-events: none;
+  }
+
+  .carousel-btn {
+    pointer-events: auto;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+  }
+
+  .carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+  }
+
+  .carousel-btn:active {
+    transform: scale(0.95);
+  }
+
+  .image-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .indicator-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .indicator-dot.active {
+    background: white;
+    width: 24px;
+    border-radius: 4px;
   }
 
   .variant-select {
@@ -346,6 +435,8 @@
 
   let currentProduct: any = null;
   let allProducts: any[] = [];
+  let currentImages: string[] = [];
+  let currentImageIndex: number = 0;
 
   // Fetch products once
   async function fetchProducts() {
@@ -427,14 +518,83 @@
     const priceEl = document.getElementById('product-price');
     const imageEl = document.getElementById('product-image') as HTMLImageElement;
 
-    if (!variantSelect || !priceEl || !imageEl) return;
+    if (!variantSelect || !priceEl || !imageEl || !currentProduct) return;
 
     const selectedOption = variantSelect.options[variantSelect.selectedIndex];
     const price = parseFloat(selectedOption.dataset.price || '0');
-    const image = selectedOption.dataset.image;
+    const variantId = parseInt(selectedOption.value);
+
+    // Find the selected variant
+    const variant = currentProduct.variants.find((v: any) => v.id === variantId);
 
     priceEl.textContent = formatPrice(price);
-    if (image) imageEl.src = image;
+
+    if (variant) {
+      // Collect all available images for this variant (preview URLs)
+      currentImages = variant.files
+        .filter((file: any) => file.preview)
+        .map((file: any) => file.preview);
+
+      // Start at the last image (the mockup)
+      currentImageIndex = currentImages.length - 1;
+      updateCarousel();
+    }
+  }
+
+  // Update carousel display
+  function updateCarousel() {
+    const imageEl = document.getElementById('product-image') as HTMLImageElement;
+    const carouselControls = document.getElementById('carousel-controls');
+    const imageIndicators = document.getElementById('image-indicators');
+
+    if (!imageEl) return;
+
+    // Update main image
+    if (currentImages.length > 0) {
+      imageEl.src = currentImages[currentImageIndex];
+    }
+
+    // Show/hide controls based on number of images
+    if (currentImages.length > 1) {
+      carouselControls!.style.display = 'flex';
+      imageIndicators!.style.display = 'flex';
+      updateIndicators();
+    } else {
+      carouselControls!.style.display = 'none';
+      imageIndicators!.style.display = 'none';
+    }
+  }
+
+  // Update indicator dots
+  function updateIndicators() {
+    const imageIndicators = document.getElementById('image-indicators');
+    if (!imageIndicators) return;
+
+    imageIndicators.innerHTML = currentImages.map((_, index) =>
+      `<div class="indicator-dot ${index === currentImageIndex ? 'active' : ''}" data-index="${index}"></div>`
+    ).join('');
+
+    // Add click handlers to indicators
+    imageIndicators.querySelectorAll('.indicator-dot').forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = parseInt((dot as HTMLElement).dataset.index || '0');
+        currentImageIndex = index;
+        updateCarousel();
+      });
+    });
+  }
+
+  // Navigate carousel
+  function navigateCarousel(direction: 'prev' | 'next') {
+    if (currentImages.length <= 1) return;
+
+    if (direction === 'prev') {
+      currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+    } else {
+      currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+    }
+
+    updateCarousel();
   }
 
   // Close modal
@@ -443,11 +603,31 @@
     modal?.classList.remove('open');
     document.body.style.overflow = '';
     currentProduct = null;
+    currentImages = [];
+    currentImageIndex = 0;
   }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('product-modal');
+    if (!modal?.classList.contains('open')) return;
+
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      navigateCarousel('prev');
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      navigateCarousel('next');
+    }
+  });
 
   // Event listeners
   document.getElementById('close-modal')?.addEventListener('click', closeModal);
   document.getElementById('modal-overlay')?.addEventListener('click', closeModal);
+
+  // Carousel navigation
+  document.getElementById('prev-image')?.addEventListener('click', () => navigateCarousel('prev'));
+  document.getElementById('next-image')?.addEventListener('click', () => navigateCarousel('next'));
 
   // Variant selection
   document.getElementById('variant-select')?.addEventListener('change', updateVariantDisplay);
