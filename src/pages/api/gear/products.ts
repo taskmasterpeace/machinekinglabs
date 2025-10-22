@@ -30,27 +30,21 @@ export const GET: APIRoute = async ({ request }) => {
 
     // Transform for client consumption
     const transformedProducts = products.map((product) => {
-      // Get mockup image from first variant's files (usually the last file in the array)
+      // MOCKUP FIX: Get mockup thumbnail from first variant's file index 2
       const firstVariant = product.sync_variants[0];
-      const mockupFile = firstVariant?.files?.[firstVariant.files.length - 1];
+      const mockupFile = firstVariant?.files?.[2];
       const productThumbnail = mockupFile?.preview_url || product.sync_product.thumbnail_url;
-
-      console.log(`Product ${product.sync_product.name}: Using thumbnail from file ${firstVariant?.files?.length - 1} of ${firstVariant?.files?.length}`);
 
       return {
         id: product.sync_product.id,
         name: product.sync_product.name,
         thumbnail: productThumbnail,
         variants: product.sync_variants.map((variant) => {
-          // Use the last file in the files array as it contains the product mockup
-          // The files array typically contains: [front design, back design, product mockup]
-          const fileCount = variant.files?.length || 0;
-          const variantMockup = variant.files?.[fileCount - 1];
+          // MOCKUP FIX: Use file index 2 which contains the product mockup
+          // Files array: [0]=front design, [1]=back design, [2]=product mockup
+          const mockupIndex = 2;
+          const variantMockup = variant.files?.[mockupIndex];
           const variantImage = variantMockup?.preview_url || variant.product.image;
-
-          if (variant.id === product.sync_variants[0].id) {
-            console.log(`First variant ${variant.name}: files.length=${fileCount}, using file ${fileCount - 1}, URL=${variantImage}`);
-          }
 
           return {
             id: variant.id,
