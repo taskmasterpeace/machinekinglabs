@@ -352,7 +352,7 @@
     if (allProducts.length > 0) return allProducts;
 
     try {
-      const response = await fetch('/api/store/products');
+      const response = await fetch('/api/gear/products');
       if (!response.ok) throw new Error('Failed to fetch products');
       allProducts = await response.json();
       return allProducts;
