@@ -531,9 +531,12 @@
 
     if (variant) {
       // Collect all available images for this variant (preview URLs)
-      currentImages = variant.files
+      const allImages = variant.files
         .filter((file: any) => file.preview)
         .map((file: any) => file.preview);
+
+      // Remove duplicates - keep only unique image URLs
+      currentImages = [...new Set(allImages)];
 
       // Start at the last image (the mockup)
       currentImageIndex = currentImages.length - 1;
