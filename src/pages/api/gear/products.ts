@@ -28,33 +28,40 @@ export const GET: APIRoute = async ({ request }) => {
     // Fetch products from Printful
     const products = await getAllProductsWithVariants();
 
-    // Debug: Log first variant's complete structure
-    if (products.length > 0 && products[0].sync_variants.length > 0) {
-      console.log('=== FIRST VARIANT RAW DATA ===');
-      console.log(JSON.stringify(products[0].sync_variants[0], null, 2));
-      console.log('=== END RAW DATA ===');
-    }
-
     // Transform for client consumption
-    const transformedProducts = products.map((product) => ({
-      id: product.sync_product.id,
-      name: product.sync_product.name,
-      thumbnail: product.sync_product.thumbnail_url,
-      variants: product.sync_variants.map((variant) => ({
-        id: variant.id,
-        variantId: variant.variant_id,
-        name: variant.name,
-        price: parseFloat(variant.retail_price),
-        currency: variant.currency,
-        sku: variant.sku,
-        image: variant.product.image, // Printful provides mockup images
-        files: variant.files.map((file) => ({
-          url: file.url,
-          preview: file.preview_url,
-          thumbnail: file.thumbnail_url,
-        })),
-      })),
-    }));
+    const transformedProducts = products.map((product) => {
+      // Get mockup image from first variant's files (usually the last file in the array)
+      const firstVariant = product.sync_variants[0];
+      const mockupFile = firstVariant?.files?.[firstVariant.files.length - 1];
+      const productThumbnail = mockupFile?.preview_url || product.sync_product.thumbnail_url;
+
+      return {
+        id: product.sync_product.id,
+        name: product.sync_product.name,
+        thumbnail: productThumbnail,
+        variants: product.sync_variants.map((variant) => {
+          // Use the last file in the files array as it contains the product mockup
+          // The files array typically contains: [front design, back design, product mockup]
+          const variantMockup = variant.files?.[variant.files.length - 1];
+          const variantImage = variantMockup?.preview_url || variant.product.image;
+
+          return {
+            id: variant.id,
+            variantId: variant.variant_id,
+            name: variant.name,
+            price: parseFloat(variant.retail_price),
+            currency: variant.currency,
+            sku: variant.sku,
+            image: variantImage,
+            files: variant.files.map((file) => ({
+              url: file.url,
+              preview: file.preview_url,
+              thumbnail: file.thumbnail_url,
+            })),
+          };
+        }),
+      };
+    });
 
     // Update cache
     cachedProducts = transformedProducts;
