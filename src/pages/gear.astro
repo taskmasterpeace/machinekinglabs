@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ProductModal from '../components/ProductModal.astro';
+import Cart from '../components/Cart.astro';
+---
+
+<Layout title="Gear | Machine King Labs">
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gradient-to-b from-black via-zinc-950 to-black border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        <span class="gradient-text">Machine King Labs Gear</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-4">
+        Support the lab. Wear the brand.
+      </p>
+      <p class="text-sm text-zinc-500">
+        High-quality apparel featuring our signature designs
+      </p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Loading State -->
+      <div id="products-loading" class="text-center py-20">
+        <div class="inline-block w-16 h-16 border-4 border-zinc-800 border-t-white rounded-full animate-spin mb-4"></div>
+        <p class="text-zinc-400">Loading products...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="products-error" class="text-center py-20" style="display: none;">
+        <div class="max-w-md mx-auto">
+          <svg class="w-16 h-16 mx-auto mb-4 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <h3 class="text-xl font-bold text-white mb-2">Failed to load products</h3>
+          <p class="text-zinc-400 mb-4">We're having trouble loading the store. Please try again.</p>
+          <button
+            id="retry-btn"
+            class="px-6 py-3 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all uppercase tracking-wider"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="display: none;">
+        <!-- Products will be rendered here -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="products-empty" class="text-center py-20" style="display: none;">
+        <svg class="w-16 h-16 mx-auto mb-4 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+        </svg>
+        <h3 class="text-xl font-bold text-white mb-2">No products available</h3>
+        <p class="text-zinc-400">Check back soon for new items!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="py-16 bg-zinc-950 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="p-6">
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">High Quality</h3>
+          <p class="text-zinc-400 text-sm">Premium materials and professional printing on every item</p>
+        </div>
+
+        <div class="p-6">
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Fast Shipping</h3>
+          <p class="text-zinc-400 text-sm">Worldwide delivery in 2-7 business days</p>
+        </div>
+
+        <div class="p-6">
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Secure Checkout</h3>
+          <p class="text-zinc-400 text-sm">Safe and encrypted payment processing via Stripe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Modal -->
+  <ProductModal />
+
+  <!-- Shopping Cart -->
+  <Cart />
+</Layout>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
+
+<script>
+  // Fetch and render products
+  async function loadProducts() {
+    const loadingEl = document.getElementById('products-loading');
+    const errorEl = document.getElementById('products-error');
+    const gridEl = document.getElementById('products-grid');
+    const emptyEl = document.getElementById('products-empty');
+
+    try {
+      // Show loading state
+      loadingEl!.style.display = 'block';
+      errorEl!.style.display = 'none';
+      gridEl!.style.display = 'none';
+      emptyEl!.style.display = 'none';
+
+      // Fetch products
+      const response = await fetch('/api/gear/products');
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch products');
+      }
+
+      const products = await response.json();
+
+      // Hide loading
+      loadingEl!.style.display = 'none';
+
+      // Check if we have products
+      if (products.length === 0) {
+        emptyEl!.style.display = 'block';
+        return;
+      }
+
+      // Render products
+      gridEl!.innerHTML = products.map((product: any) => `
+        <div class="product-card group bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+          <div class="aspect-square bg-white flex items-center justify-center p-8 border-b border-zinc-800 overflow-hidden">
+            <img
+              src="${product.thumbnail}"
+              alt="${product.name}"
+              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-zinc-300 transition-colors">
+              ${product.name}
+            </h3>
+            <p class="text-zinc-400 text-sm mb-4">
+              ${product.variants.length} ${product.variants.length === 1 ? 'option' : 'options'} available
+            </p>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-bold text-white">
+                ${formatPriceRange(product.variants)}
+              </p>
+              <button
+                class="view-details-btn px-4 py-2 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all text-sm uppercase tracking-wider"
+                data-product-id="${product.id}"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      gridEl!.style.display = 'grid';
+    } catch (error) {
+      console.error('Error loading products:', error);
+      loadingEl!.style.display = 'none';
+      errorEl!.style.display = 'block';
+    }
+  }
+
+  function formatPriceRange(variants: any[]) {
+    const prices = variants.map(v => v.price);
+    const minPrice = Math.min(...prices);
+    const maxPrice = Math.max(...prices);
+
+    const format = (price: number) => new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(price);
+
+    return minPrice === maxPrice ? format(minPrice) : `${format(minPrice)} - ${format(maxPrice)}`;
+  }
+
+  // Handle "View Details" button clicks
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const button = target.closest('.view-details-btn');
+
+    if (button) {
+      const productId = button.getAttribute('data-product-id');
+      if (productId) {
+        window.dispatchEvent(new CustomEvent('open-product-modal', {
+          detail: { productId }
+        }));
+      }
+    }
+  });
+
+  // Retry button
+  document.getElementById('retry-btn')?.addEventListener('click', () => {
+    loadProducts();
+  });
+
+  // Load products on page load
+  loadProducts();
+</script>

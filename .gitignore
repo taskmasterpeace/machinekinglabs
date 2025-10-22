@@ -16,6 +16,15 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.development
+.env.local
+.env.*.local
+
+# API keys and secrets (NEVER COMMIT THESE!)
+VERCEL_ENV_VARS.txt
+API_KEYS_SUMMARY.md
+*_KEYS.txt
+*_SECRETS.txt
 
 # macOS-specific files
 .DS_Store

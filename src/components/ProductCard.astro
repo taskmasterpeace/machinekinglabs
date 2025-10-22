@@ -1,0 +1,94 @@
+---
+/**
+ * ProductCard Component
+ * Displays a product with thumbnail, name, price, and "View Details" button
+ */
+
+interface Props {
+  product: {
+    id: number;
+    name: string;
+    thumbnail: string;
+    variants: Array<{
+      id: number;
+      price: number;
+      name: string;
+    }>;
+  };
+}
+
+const { product } = Astro.props;
+
+// Get price range
+const prices = product.variants.map(v => v.price);
+const minPrice = Math.min(...prices);
+const maxPrice = Math.max(...prices);
+const priceDisplay = minPrice === maxPrice
+  ? `$${minPrice.toFixed(2)}`
+  : `$${minPrice.toFixed(2)} - $${maxPrice.toFixed(2)}`;
+---
+
+<div class="product-card group bg-zinc-950 rounded-sm overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all">
+  <!-- Product Image -->
+  <div class="aspect-square bg-white flex items-center justify-center p-8 border-b border-zinc-800 overflow-hidden">
+    <img
+      src={product.thumbnail}
+      alt={product.name}
+      class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Product Info -->
+  <div class="p-6">
+    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-zinc-300 transition-colors">
+      {product.name}
+    </h3>
+
+    <p class="text-zinc-400 text-sm mb-4">
+      {product.variants.length} {product.variants.length === 1 ? 'option' : 'options'} available
+    </p>
+
+    <div class="flex items-center justify-between">
+      <p class="text-xl font-bold text-white">
+        {priceDisplay}
+      </p>
+
+      <button
+        class="view-details-btn px-4 py-2 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all text-sm uppercase tracking-wider"
+        data-product-id={product.id}
+      >
+        View Details
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+</style>
+
+<script>
+  // Handle "View Details" button clicks
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const button = target.closest('.view-details-btn');
+
+    if (button) {
+      const productId = button.getAttribute('data-product-id');
+      if (productId) {
+        // Dispatch custom event to open product modal
+        window.dispatchEvent(new CustomEvent('open-product-modal', {
+          detail: { productId }
+        }));
+      }
+    }
+  });
+</script>

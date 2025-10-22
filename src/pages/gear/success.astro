@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Order Confirmed | Machine King Labs Gear">
+  <section class="min-h-screen flex items-center justify-center py-20">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Success Icon -->
+      <div class="mb-8">
+        <div class="w-24 h-24 bg-green-500/10 border-2 border-green-500 rounded-full flex items-center justify-center mx-auto">
+          <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="gradient-text">Order Confirmed!</span>
+      </h1>
+
+      <p class="text-xl text-zinc-400 mb-8">
+        Thank you for your purchase. Your order has been received and is being processed.
+      </p>
+
+      <!-- Order Details -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-sm p-8 mb-8 text-left">
+        <h2 class="text-lg font-bold text-white mb-4">What Happens Next?</h2>
+
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">Order Confirmation</h3>
+              <p class="text-sm text-zinc-400">You'll receive an email confirmation shortly with your order details.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">Production</h3>
+              <p class="text-sm text-zinc-400">Your items will be custom printed and carefully prepared for shipping (2-7 business days).</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">Shipping & Tracking</h3>
+              <p class="text-sm text-zinc-400">Once shipped, you'll receive tracking information via email to monitor your delivery.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">Enjoy!</h3>
+              <p class="text-sm text-zinc-400">Your order will arrive at your doorstep ready to wear. Support the lab in style!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order ID -->
+      <div id="order-info" class="text-sm text-zinc-500 mb-8">
+        <!-- Will be populated by JavaScript if session_id is present -->
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/gear"
+          class="px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all uppercase tracking-wider"
+        >
+          Continue Shopping
+        </a>
+        <a
+          href="/"
+          class="px-8 py-4 bg-transparent hover:bg-zinc-900 border border-zinc-700 hover:border-zinc-500 rounded-sm font-semibold transition-all uppercase tracking-wider"
+        >
+          Back to Home
+        </a>
+      </div>
+
+      <!-- Support Info -->
+      <div class="mt-12 pt-8 border-t border-zinc-800">
+        <p class="text-sm text-zinc-400 mb-2">Questions about your order?</p>
+        <a
+          href="mailto:robertsmith@machinekinglabs.com"
+          class="text-white hover:text-zinc-300 transition-colors font-semibold"
+        >
+          robertsmith@machinekinglabs.com
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
+
+<script>
+  import { clearCart } from '../../lib/cart';
+
+  // Get session ID from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const sessionId = urlParams.get('session_id');
+
+  if (sessionId) {
+    const orderInfo = document.getElementById('order-info');
+    if (orderInfo) {
+      orderInfo.innerHTML = `
+        <p>Order Reference: <strong class="text-white font-mono">${sessionId.substring(0, 20)}...</strong></p>
+        <p class="mt-1">Save this reference for your records</p>
+      `;
+    }
+
+    // Clear cart after successful purchase
+    clearCart();
+  }
+</script>

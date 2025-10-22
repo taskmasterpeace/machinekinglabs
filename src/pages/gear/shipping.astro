@@ -1,0 +1,180 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Shipping Information | Machine King Labs Gear">
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        <span class="gradient-text">Shipping Information</span>
+      </h1>
+
+      <p class="text-xl text-zinc-400 mb-12">
+        Everything you need to know about shipping and delivery
+      </p>
+
+      <!-- Processing Time -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Processing Time</h2>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-sm p-6">
+          <p class="text-zinc-300 mb-4">
+            All items are custom printed on-demand after your order is placed. This ensures the highest quality and reduces waste.
+          </p>
+          <ul class="space-y-2 text-zinc-400">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Standard Processing:</strong> 2-7 business days</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Production begins immediately after payment confirmation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>You'll receive tracking information via email once shipped</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Shipping Regions -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Shipping Regions</h2>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-sm p-6">
+          <p class="text-zinc-300 mb-4">
+            We ship worldwide through Printful's global fulfillment network:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h3 class="font-semibold text-white mb-2">United States</h3>
+              <p class="text-zinc-400 text-sm">5-7 business days</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">Canada</h3>
+              <p class="text-zinc-400 text-sm">7-10 business days</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">Europe</h3>
+              <p class="text-zinc-400 text-sm">7-14 business days</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">Australia & New Zealand</h3>
+              <p class="text-zinc-400 text-sm">10-14 business days</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">Asia</h3>
+              <p class="text-zinc-400 text-sm">10-15 business days</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">Other Regions</h3>
+              <p class="text-zinc-400 text-sm">Varies by location</p>
+            </div>
+          </div>
+          <p class="text-zinc-500 text-sm mt-4">
+            *Delivery times are estimates and may vary based on destination and customs processing
+          </p>
+        </div>
+      </div>
+
+      <!-- Shipping Costs -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Shipping Costs</h2>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-sm p-6">
+          <p class="text-zinc-300 mb-4">
+            Shipping costs are calculated at checkout based on:
+          </p>
+          <ul class="space-y-2 text-zinc-400">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Destination country and address</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <span>Package weight and dimensions</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Selected shipping method</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tracking -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Order Tracking</h2>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-sm p-6">
+          <p class="text-zinc-300 mb-4">
+            Once your order ships, you'll receive:
+          </p>
+          <ul class="space-y-2 text-zinc-400">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Email notification with tracking number</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              <span>Direct link to track your package</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-white mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Real-time delivery updates</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Questions -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-sm p-8 text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">Have Questions?</h2>
+        <p class="text-zinc-300 mb-6">
+          Our team is here to help with any shipping-related inquiries.
+        </p>
+        <a
+          href="mailto:robertsmith@machinekinglabs.com"
+          class="inline-block px-8 py-4 bg-white text-black hover:bg-zinc-200 rounded-sm font-semibold transition-all uppercase tracking-wider"
+        >
+          Contact Support
+        </a>
+      </div>
+
+      <!-- Back to Gear -->
+      <div class="mt-12 text-center">
+        <a href="/gear" class="text-white hover:text-zinc-300 transition-colors font-semibold inline-flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Gear
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
