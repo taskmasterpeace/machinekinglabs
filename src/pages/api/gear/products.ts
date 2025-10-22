@@ -30,9 +30,11 @@ export const GET: APIRoute = async ({ request }) => {
 
     // Transform for client consumption
     const transformedProducts = products.map((product) => {
-      // MOCKUP FIX: Get mockup thumbnail from first variant's file index 2
+      // MOCKUP FIX: Get mockup thumbnail from LAST file in first variant's files array
+      // Different products have different numbers of files (3 or 4), mockup is always last
       const firstVariant = product.sync_variants[0];
-      const mockupFile = firstVariant?.files?.[2];
+      const fileCount = firstVariant?.files?.length || 0;
+      const mockupFile = fileCount > 0 ? firstVariant.files[fileCount - 1] : null;
       const productThumbnail = mockupFile?.preview_url || product.sync_product.thumbnail_url;
 
       return {
@@ -40,10 +42,10 @@ export const GET: APIRoute = async ({ request }) => {
         name: product.sync_product.name,
         thumbnail: productThumbnail,
         variants: product.sync_variants.map((variant) => {
-          // MOCKUP FIX: Use file index 2 which contains the product mockup
-          // Files array: [0]=front design, [1]=back design, [2]=product mockup
-          const mockupIndex = 2;
-          const variantMockup = variant.files?.[mockupIndex];
+          // MOCKUP FIX: Use LAST file which contains the product mockup
+          // Files array varies: some have 3 files, some have 4, mockup is always last
+          const variantFileCount = variant.files?.length || 0;
+          const variantMockup = variantFileCount > 0 ? variant.files[variantFileCount - 1] : null;
           const variantImage = variantMockup?.preview_url || variant.product.image;
 
           return {
