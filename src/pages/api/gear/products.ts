@@ -35,6 +35,8 @@ export const GET: APIRoute = async ({ request }) => {
       const mockupFile = firstVariant?.files?.[firstVariant.files.length - 1];
       const productThumbnail = mockupFile?.preview_url || product.sync_product.thumbnail_url;
 
+      console.log(`Product ${product.sync_product.name}: Using thumbnail from file ${firstVariant?.files?.length - 1} of ${firstVariant?.files?.length}`);
+
       return {
         id: product.sync_product.id,
         name: product.sync_product.name,
@@ -42,8 +44,13 @@ export const GET: APIRoute = async ({ request }) => {
         variants: product.sync_variants.map((variant) => {
           // Use the last file in the files array as it contains the product mockup
           // The files array typically contains: [front design, back design, product mockup]
-          const variantMockup = variant.files?.[variant.files.length - 1];
+          const fileCount = variant.files?.length || 0;
+          const variantMockup = variant.files?.[fileCount - 1];
           const variantImage = variantMockup?.preview_url || variant.product.image;
+
+          if (variant.id === product.sync_variants[0].id) {
+            console.log(`First variant ${variant.name}: files.length=${fileCount}, using file ${fileCount - 1}, URL=${variantImage}`);
+          }
 
           return {
             id: variant.id,
