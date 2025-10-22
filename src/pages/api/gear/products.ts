@@ -9,7 +9,7 @@ import { getAllProductsWithVariants } from '../../../lib/printful';
 // Simple in-memory cache (5 minutes TTL)
 let cachedProducts: any = null;
 let cacheTimestamp: number = 0;
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+const CACHE_TTL = 0; // Temporarily disabled for deployment - will re-enable to 5 * 60 * 1000
 
 export const GET: APIRoute = async ({ request }) => {
   try {
