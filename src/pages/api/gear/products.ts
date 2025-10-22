@@ -32,7 +32,7 @@ export const GET: APIRoute = async ({ request }) => {
     const transformedProducts = products.map((product) => ({
       id: product.sync_product.id,
       name: product.sync_product.name,
-      thumbnail: product.sync_product.thumbnail_url,
+      thumbnail: product.sync_variants[0]?.files[0]?.preview_url || product.sync_product.thumbnail_url, // Use mockup with design
       variants: product.sync_variants.map((variant) => ({
         id: variant.id,
         variantId: variant.variant_id,
@@ -40,7 +40,7 @@ export const GET: APIRoute = async ({ request }) => {
         price: parseFloat(variant.retail_price),
         currency: variant.currency,
         sku: variant.sku,
-        image: variant.product.image,
+        image: variant.files[0]?.preview_url || variant.product.image, // Use mockup with design
         files: variant.files.map((file) => ({
           url: file.url,
           preview: file.preview_url,
