@@ -28,54 +28,26 @@ export const GET: APIRoute = async ({ request }) => {
     // Fetch products from Printful
     const products = await getAllProductsWithVariants();
 
-    // Map color names to their hash suffixes from downloaded mockups
-    const mockupHashes: Record<string, string> = {
-      'black': '68f9369d0e9f2',
-      'light-pink': '68f9369d0f04a',
-      'sky-blue': '68f9369d0ec72',
-      'team-royal': '68f9369d0edd1',
-      'white': '68f9369d0ef27',
-    };
-
     // Transform for client consumption
-    const transformedProducts = products.map((product) => {
-      const productId = product.sync_product.id;
-
-      return {
-        id: productId,
-        name: product.sync_product.name,
-        // Use black-front mockup as thumbnail for product 398235774, otherwise use Printful thumbnail
-        thumbnail: productId === 398235774
-          ? `/images/mockups/cotton-heritage-m2580-i-unisex-premium-pullover-hoodie-black-front-${mockupHashes['black']}.png`
-          : product.sync_product.thumbnail_url,
-        variants: product.sync_variants.map((variant) => {
-          // Extract color for mockup mapping
-          const colorMatch = variant.name.match(/^([^/]+)/);
-          const color = colorMatch ? colorMatch[1].trim().toLowerCase().replace(/\s+/g, '-') : '';
-          const hash = mockupHashes[color];
-
-          // Use mockup image if available, otherwise fall back to Printful image
-          const mockupImage = (productId === 398235774 && hash)
-            ? `/images/mockups/cotton-heritage-m2580-i-unisex-premium-pullover-hoodie-${color}-front-${hash}.png`
-            : variant.product.image;
-
-          return {
-            id: variant.id,
-            variantId: variant.variant_id,
-            name: variant.name,
-            price: parseFloat(variant.retail_price),
-            currency: variant.currency,
-            sku: variant.sku,
-            image: mockupImage,
-            files: variant.files.map((file) => ({
-              url: file.url,
-              preview: file.preview_url,
-              thumbnail: file.thumbnail_url,
-            })),
-          };
-        }),
-      };
-    });
+    const transformedProducts = products.map((product) => ({
+      id: product.sync_product.id,
+      name: product.sync_product.name,
+      thumbnail: product.sync_product.thumbnail_url,
+      variants: product.sync_variants.map((variant) => ({
+        id: variant.id,
+        variantId: variant.variant_id,
+        name: variant.name,
+        price: parseFloat(variant.retail_price),
+        currency: variant.currency,
+        sku: variant.sku,
+        image: variant.product.image, // Printful provides mockup images
+        files: variant.files.map((file) => ({
+          url: file.url,
+          preview: file.preview_url,
+          thumbnail: file.thumbnail_url,
+        })),
+      })),
+    }));
 
     // Update cache
     cachedProducts = transformedProducts;
